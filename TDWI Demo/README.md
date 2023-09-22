@@ -10,4 +10,4 @@ Steps to deploy:
 2. Import into your Qlik Cloud tenant:
    1. [Data Integration](QCDI%20Pipeline.json)
    2. [Analytics](TDWI.qvf)
-3. Configure a Databricks DLT using [this](pipeline_settings.json)
+3. Configure a Databricks DLT workflow using [this](pipeline_settings.json), making sure to adjust all the paths

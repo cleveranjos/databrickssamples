@@ -1,0 +1,734 @@
+{
+  "bindings": {
+    "project": {
+      "space": "QCDI Demos",
+      "id": "${tdwi_demo}",
+      "name": "TDWI Demo",
+      "type": "DATA_PIPELINE",
+      "description": "",
+      "schemaPrefix": "",
+      "lakehouseType": "DATABRICKS",
+      "storageConnection": {
+        "type": "databricks",
+        "space": "QCDI Demos",
+        "name": "Databricks_dbc-ef0f65b0-dc4e.cloud.databricks.com_dapifcdb5723c5eecc5dd689b538f3c3fbfd",
+        "id": "d8278757-3b77-4678-be04-864d1d0f72e9",
+        "kindId": null
+      },
+      "landingStorageConnection": {
+        "type": "File_AmazonS3Connector",
+        "space": "QCDI Demos",
+        "name": "Amazon_S3_Databricks_Staging",
+        "id": "0ebe69a6-7e86-428c-8572-9c681827905d",
+        "kindId": null
+      },
+      "qvdStorageLocationType": "NONE"
+    },
+    "appSourceConnections": {
+      "${onboarding_tdwi_landing-WeQa.connection}": "QCDI Demos.Transational Data"
+    },
+    "sourceConnections": {
+      "QCDI Demos.Transational Data": {
+        "type": "repsrc_postgresql",
+        "space": "QCDI Demos",
+        "name": "Transational Data",
+        "id": "f3e45c92-3bd2-4ed5-b676-315a77b0b068",
+        "kindId": null
+      }
+    },
+    "databases": {
+      "landing": "hive_metastore",
+      "storage": "hive_metastore",
+      "transform": "hive_metastore",
+      "datamart": "hive_metastore",
+      "registeredData": "hive_metastore",
+      "appOverrides": {}
+    },
+    "executionEngines": {
+      "landing": "",
+      "storage": "",
+      "transform": "",
+      "datamart": "",
+      "registeredData": null,
+      "appOverrides": {}
+    },
+    "dataAssetsMapping": [
+      {
+        "appId": "onboarding_tdwi_landing-WeQa",
+        "mappings": [
+          {
+            "from": {
+              "database": null,
+              "schema": "churn"
+            },
+            "to": {
+              "database": null,
+              "schema": "churn"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "projectSettings": {
+    "storageSettingsDefaults": {
+      "materialized": true,
+      "hasHistory": true,
+      "transactionalLiveViews": false,
+      "hasLiveViews": true,
+      "hasChanges": true,
+      "hasCurrent": true,
+      "dataAppRuntime": {
+        "tableUpdateInterval": 15,
+        "tableUpdateConcurrency": 10,
+        "workloadExecutionEngine": {
+          "engineType": "DEFAULT",
+          "name": ""
+        }
+      },
+      "dataAppSchedulingInfo": {
+        "runInterval": 15,
+        "schedulingType": "TIME_BASED"
+      },
+      "database": {
+        "connectionType": "DEFAULT",
+        "name": "hive_metastore"
+      }
+    },
+    "landingSettingsDefaults": {
+      "hasChanges": true,
+      "hasCurrent": false,
+      "dataAppRuntime": {
+        "tableLoadInParallel": 5,
+        "changeProcessingInterval": 60,
+        "sourceCdcFetchIntervalMinutes": 15,
+        "initialLoadMode": "useCache",
+        "workloadExecutionEngine": {
+          "engineType": "DEFAULT",
+          "name": ""
+        }
+      },
+      "folderLocationType": "DATA_ASSET_NAME",
+      "specificFolder": "",
+      "proxySettings": {
+        "proxyOdbc": false,
+        "proxyStorage": false
+      },
+      "database": {
+        "connectionType": "DEFAULT",
+        "name": "hive_metastore"
+      }
+    },
+    "transformSettingsDefaults": {
+      "materialized": false,
+      "hasHistory": true,
+      "transactionalLiveViews": false,
+      "hasLiveViews": false,
+      "hasChanges": true,
+      "hasCurrent": true,
+      "dataAppRuntime": {
+        "tableUpdateInterval": 15,
+        "tableUpdateConcurrency": 10,
+        "workloadExecutionEngine": {
+          "engineType": "DEFAULT",
+          "name": ""
+        }
+      },
+      "dataAppSchedulingInfo": {
+        "runInterval": 15,
+        "schedulingType": "EVENT_BASED"
+      },
+      "database": {
+        "connectionType": "DEFAULT",
+        "name": "hive_metastore"
+      }
+    },
+    "datamartSettingsDefaults": {
+      "materialized": true,
+      "hasHistory": false,
+      "transactionalLiveViews": false,
+      "hasLiveViews": false,
+      "hasChanges": false,
+      "hasCurrent": true,
+      "dataAppRuntime": {
+        "tableUpdateInterval": 15,
+        "tableUpdateConcurrency": 10,
+        "workloadExecutionEngine": {
+          "engineType": "DEFAULT",
+          "name": ""
+        }
+      },
+      "dataAppSchedulingInfo": {
+        "runInterval": 15,
+        "schedulingType": "EVENT_BASED"
+      },
+      "database": {
+        "connectionType": "DEFAULT",
+        "name": "hive_metastore"
+      }
+    },
+    "artifactsNamingDefaults": {
+      "suffixLiveViews": "__live",
+      "suffixChangesView": "__changes",
+      "suffixCurrentView": "",
+      "suffixHistoryViews": "__history",
+      "suffixLiveHistoryViews": "__live_history",
+      "suffixInternalSchema": "__internal",
+      "prefixHeaderColumns": "hdr__",
+      "prefixSchema": ""
+    },
+    "qvdStorageSettingsDefaults": {
+      "folderLocationType": "DATA_ASSET_NAME",
+      "specificFolder": ""
+    },
+    "registeredSettingsDefaults": {
+      "incrementalSettings": {
+        "registeredType": "NONE",
+        "watermarkColumnName": null,
+        "useBatchTimeAsFromDate": false,
+        "fromDateColumnName": null,
+        "useSameTableAsCt": false,
+        "ctTableName": null,
+        "softDeleteSupport": false,
+        "softDeleteExpression": null,
+        "priorImageSupport": false,
+        "priorImageExpression": null
+      },
+      "database": {
+        "connectionType": "DEFAULT",
+        "name": "hive_metastore"
+      }
+    },
+    "loggingTableSettings": {
+      "artifactsLocation": {
+        "internalSchema": "PROJECT_INTERNAL",
+        "externalSchema": "PROJECT_EXTERNAL",
+        "database": ""
+      }
+    }
+  },
+  "batchMode": true,
+  "apps": [
+    {
+      "app": {
+        "type": "LANDING_SAAS_MANAGED",
+        "subType": null,
+        "id": "onboarding_tdwi_landing-WeQa",
+        "name": "Onboarding_TDWI_Landing",
+        "description": "",
+        "version": "1",
+        "tags": null
+      },
+      "settings": {
+        "fullLoadOnly": false,
+        "landingAppSettings": {
+          "landingDwSettings": {
+            "landingArtifactsLocation": {
+              "dataAssetSchema": "onboarding_tdwi_landing",
+              "database": "${landing}"
+            }
+          },
+          "landingStorageSettings": {
+            "folderLocationType": "DATA_ASSET_NAME",
+            "specificFolder": ""
+          },
+          "landingAppRuntime": {
+            "tableLoadInParallel": 5,
+            "changeProcessingInterval": 60,
+            "sourceCdcFetchIntervalMinutes": 15,
+            "initialLoadMode": "useCache",
+            "workloadExecutionEngine": {
+              "engineType": "DEFAULT",
+              "name": ""
+            }
+          },
+          "maximumLobSize": 8,
+          "includeLobColumns": true,
+          "isReplicateLanding": true,
+          "replicateTaskId": null,
+          "landingType": "REPLICATE",
+          "proxySettings": {
+            "proxyOdbc": false,
+            "proxyStorage": false
+          },
+          "artifactsInfo": {
+            "prefixForAllTablesAndViews": "",
+            "liveViews": {
+              "enabled": true,
+              "transactionallyConsistent": false,
+              "currentSuffix": "__live",
+              "historySuffix": "__live_history"
+            },
+            "headerColumnsPrefix": "hdr__",
+            "history": {
+              "enabled": false,
+              "historyViewsSuffix": "__history",
+              "fromDateColumnName": "hdr__from_timestamp",
+              "toDateColumnName": "hdr__to_timestamp",
+              "priorTablesSuffix": "__prior"
+            },
+            "changeTables": {
+              "enabled": true,
+              "tablesSuffix": "__ct",
+              "viewsSuffix": "__changes"
+            },
+            "standardViewsWithHeaders": {
+              "enabled": true,
+              "suffix": "__whdr"
+            },
+            "current": {
+              "standardViewsSuffix": "",
+              "currentTablesSuffix": "__current"
+            },
+            "materialized": false,
+            "reloadType": "COMPARE_AND_APPLY_WITH_DELETED_ROWS"
+          }
+        },
+        "transformAppSettings": null,
+        "storageAppSettings": null,
+        "datamartAppSettings": null,
+        "qvdStorageAppSettings": null,
+        "registeredAppSettings": null,
+        "replicationAppSettings": null,
+        "consolidationAppSettings": null,
+        "publishingAppSettings": null,
+        "distributionAppSettings": null,
+        "lakeLandingAppSettings": null,
+        "isDummySettings": null
+      },
+      "sourceSelection": {
+        "dataEntitiesSelection": {
+          "sourceConnectionId": "${onboarding_tdwi_landing-WeQa.connection}",
+          "includePatterns": [],
+          "excludePatterns": [],
+          "dataEntities": [
+            {
+              "type": "TABLE",
+              "entityId": "$replicate$churn_events",
+              "schema": "churn",
+              "database": null,
+              "name": "events",
+              "projectId": "${tdwi_demo}",
+              "dataAppId": "onboarding_tdwi_landing-WeQa"
+            },
+            {
+              "type": "TABLE",
+              "entityId": "$replicate$churn_orders",
+              "schema": "churn",
+              "database": null,
+              "name": "orders",
+              "projectId": "${tdwi_demo}",
+              "dataAppId": "onboarding_tdwi_landing-WeQa"
+            },
+            {
+              "type": "TABLE",
+              "entityId": "$replicate$churn_users",
+              "schema": "churn",
+              "database": null,
+              "name": "users",
+              "projectId": "${tdwi_demo}",
+              "dataAppId": "onboarding_tdwi_landing-WeQa"
+            }
+          ]
+        }
+      },
+      "dataEntities": [
+        {
+          "type": "LANDING",
+          "inputDataEntities": [
+            {
+              "type": "TABLE",
+              "entityId": "$replicate$churn_events",
+              "schema": "churn",
+              "database": null,
+              "name": "events",
+              "projectId": "${tdwi_demo}",
+              "dataAppId": "onboarding_tdwi_landing-WeQa"
+            }
+          ],
+          "dataEntityAttributes": null,
+          "tableDef": null,
+          "newName": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "qlikConnectorDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "id": "events",
+          "name": "events",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "LANDING",
+          "inputDataEntities": [
+            {
+              "type": "TABLE",
+              "entityId": "$replicate$churn_orders",
+              "schema": "churn",
+              "database": null,
+              "name": "orders",
+              "projectId": "${tdwi_demo}",
+              "dataAppId": "onboarding_tdwi_landing-WeQa"
+            }
+          ],
+          "dataEntityAttributes": null,
+          "tableDef": null,
+          "newName": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "qlikConnectorDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "id": "orders",
+          "name": "orders",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "LANDING",
+          "inputDataEntities": [
+            {
+              "type": "TABLE",
+              "entityId": "$replicate$churn_users",
+              "schema": "churn",
+              "database": null,
+              "name": "users",
+              "projectId": "${tdwi_demo}",
+              "dataAppId": "onboarding_tdwi_landing-WeQa"
+            }
+          ],
+          "dataEntityAttributes": null,
+          "tableDef": null,
+          "newName": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "qlikConnectorDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "id": "users",
+          "name": "users",
+          "description": "",
+          "version": "1",
+          "tags": null
+        }
+      ],
+      "cachedDataEntities": [
+        {
+          "type": "LANDING",
+          "inputDataEntities": null,
+          "dataEntityAttributes": null,
+          "tableDef": {
+            "name": "events",
+            "dbSchema": "churn",
+            "dbName": "hive_metastore",
+            "columns": null,
+            "datasetId": null,
+            "dbTableId": null,
+            "entityId": null,
+            "secureQri": "",
+            "fullLoadOnly": false
+          },
+          "newName": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "qlikConnectorDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "id": "$replicate$churn_events",
+          "name": "churn_events",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "LANDING",
+          "inputDataEntities": null,
+          "dataEntityAttributes": null,
+          "tableDef": {
+            "name": "orders",
+            "dbSchema": "churn",
+            "dbName": "hive_metastore",
+            "columns": null,
+            "datasetId": null,
+            "dbTableId": null,
+            "entityId": null,
+            "secureQri": "",
+            "fullLoadOnly": false
+          },
+          "newName": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "qlikConnectorDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "id": "$replicate$churn_orders",
+          "name": "churn_orders",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "LANDING",
+          "inputDataEntities": null,
+          "dataEntityAttributes": null,
+          "tableDef": {
+            "name": "users",
+            "dbSchema": "churn",
+            "dbName": "hive_metastore",
+            "columns": null,
+            "datasetId": null,
+            "dbTableId": null,
+            "entityId": null,
+            "secureQri": "",
+            "fullLoadOnly": false
+          },
+          "newName": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "qlikConnectorDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "id": "$replicate$churn_users",
+          "name": "churn_users",
+          "description": "",
+          "version": "1",
+          "tags": null
+        }
+      ],
+      "rulesets": [],
+      "entityRelationship": [],
+      "schedulings": []
+    },
+    {
+      "app": {
+        "type": "STORAGE",
+        "subType": null,
+        "id": "onboarding_tdwi_storage-WeQb",
+        "name": "Onboarding_TDWI_Storage",
+        "description": "",
+        "version": "1",
+        "tags": null
+      },
+      "settings": {
+        "fullLoadOnly": false,
+        "landingAppSettings": null,
+        "transformAppSettings": null,
+        "storageAppSettings": {
+          "artifactsLocation": {
+            "internalSchema": "onboarding_tdwi_storage__internal",
+            "dataAssetSchema": "onboarding_tdwi_storage",
+            "database": "${storage}"
+          },
+          "artifactsInfo": {
+            "prefixForAllTablesAndViews": "",
+            "liveViews": {
+              "enabled": true,
+              "transactionallyConsistent": false,
+              "currentSuffix": "__live",
+              "historySuffix": "__live_history"
+            },
+            "headerColumnsPrefix": "hdr__",
+            "history": {
+              "enabled": false,
+              "historyViewsSuffix": "__history",
+              "fromDateColumnName": "hdr__from_timestamp",
+              "toDateColumnName": "hdr__to_timestamp",
+              "priorTablesSuffix": "__prior"
+            },
+            "changeTables": {
+              "enabled": true,
+              "tablesSuffix": "__ct",
+              "viewsSuffix": "__changes"
+            },
+            "standardViewsWithHeaders": {
+              "enabled": true,
+              "suffix": "__whdr"
+            },
+            "current": {
+              "standardViewsSuffix": "",
+              "currentTablesSuffix": "__current"
+            },
+            "materialized": true,
+            "reloadType": "COMPARE_AND_APPLY_WITH_DELETED_ROWS"
+          },
+          "dataAppRuntime": {
+            "tableUpdateInterval": 15,
+            "tableUpdateConcurrency": 10,
+            "workloadExecutionEngine": {
+              "engineType": "DEFAULT",
+              "name": ""
+            }
+          }
+        },
+        "datamartAppSettings": null,
+        "qvdStorageAppSettings": null,
+        "registeredAppSettings": null,
+        "replicationAppSettings": null,
+        "consolidationAppSettings": null,
+        "publishingAppSettings": null,
+        "distributionAppSettings": null,
+        "lakeLandingAppSettings": null,
+        "isDummySettings": null
+      },
+      "sourceSelection": {
+        "dataEntitiesSelection": {
+          "sourceConnectionId": null,
+          "includePatterns": [
+            {
+              "tablePattern": "%",
+              "schemaPattern": "%",
+              "database": null,
+              "entityType": "TABLE",
+              "projectId": "${tdwi_demo}",
+              "dataAppId": "onboarding_tdwi_landing-WeQa"
+            }
+          ],
+          "excludePatterns": [],
+          "dataEntities": []
+        }
+      },
+      "dataEntities": [
+        {
+          "type": "STORAGE",
+          "inputDataEntities": [
+            {
+              "type": "NONE",
+              "entityId": "events",
+              "schema": null,
+              "database": null,
+              "name": "events",
+              "projectId": "${tdwi_demo}",
+              "dataAppId": "onboarding_tdwi_landing-WeQa"
+            }
+          ],
+          "dataEntityAttributes": {
+            "materialized": "INHERIT",
+            "hasHistory": "INHERIT",
+            "hasLiveViews": "INHERIT",
+            "hasChanges": "INHERIT",
+            "hasStandardViewsWithHeaders": "INHERIT",
+            "watermarkIncrementalSettings": "INHERIT"
+          },
+          "tableDef": null,
+          "newName": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "qlikConnectorDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "id": "events-WeQd",
+          "name": "events",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "STORAGE",
+          "inputDataEntities": [
+            {
+              "type": "NONE",
+              "entityId": "orders",
+              "schema": null,
+              "database": null,
+              "name": "orders",
+              "projectId": "${tdwi_demo}",
+              "dataAppId": "onboarding_tdwi_landing-WeQa"
+            }
+          ],
+          "dataEntityAttributes": {
+            "materialized": "INHERIT",
+            "hasHistory": "INHERIT",
+            "hasLiveViews": "INHERIT",
+            "hasChanges": "INHERIT",
+            "hasStandardViewsWithHeaders": "INHERIT",
+            "watermarkIncrementalSettings": "INHERIT"
+          },
+          "tableDef": null,
+          "newName": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "qlikConnectorDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "id": "orders-WeQe",
+          "name": "orders",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "STORAGE",
+          "inputDataEntities": [
+            {
+              "type": "NONE",
+              "entityId": "users",
+              "schema": null,
+              "database": null,
+              "name": "users",
+              "projectId": "${tdwi_demo}",
+              "dataAppId": "onboarding_tdwi_landing-WeQa"
+            }
+          ],
+          "dataEntityAttributes": {
+            "materialized": "INHERIT",
+            "hasHistory": "INHERIT",
+            "hasLiveViews": "INHERIT",
+            "hasChanges": "INHERIT",
+            "hasStandardViewsWithHeaders": "INHERIT",
+            "watermarkIncrementalSettings": "INHERIT"
+          },
+          "tableDef": null,
+          "newName": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "qlikConnectorDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "id": "users-WeQf",
+          "name": "users",
+          "description": "",
+          "version": "1",
+          "tags": null
+        }
+      ],
+      "cachedDataEntities": [],
+      "rulesets": [],
+      "entityRelationship": [],
+      "schedulings": [
+        {
+          "enabled": false,
+          "schedulingType": "TIME_BASED",
+          "timeBasedScheduling": {
+            "schedule": [
+              "RRULE:FREQ=MINUTELY;INTERVAL=15;BYSECOND=0"
+            ],
+            "startDateTime": "2023-06-28T13:40:00.358Z",
+            "endDateTime": null,
+            "timezone": "Etc/UTC"
+          },
+          "eventBasedScheduling": {
+            "eventSchedulingType": "ANY_INPUT_TASK",
+            "triggerApps": []
+          },
+          "id": "schedule-WeQc",
+          "name": "Schedule",
+          "description": "",
+          "version": "1",
+          "tags": null
+        }
+      ]
+    }
+  ]
+}

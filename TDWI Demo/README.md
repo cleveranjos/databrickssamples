@@ -11,3 +11,6 @@ Steps to deploy:
    1. [Data Integration](QCDI%20Pipeline.json)
    2. [Analytics](TDWI.qvf)
 3. Configure a Databricks DLT workflow using [this](pipeline_settings.json), making sure to adjust all the paths
+4. Import [database](dump-TWDI) using Dbeaver
+5. You can use this [script](DML.sql) to add/update records to the database
+   

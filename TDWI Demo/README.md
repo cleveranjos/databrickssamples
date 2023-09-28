@@ -5,7 +5,7 @@ Assets used to deliver this [demo](https://www.youtube.com/watch?v=3097bGoDDBU)
 Steps to deploy:
 
 1. Import into your Databricks workspace:
-   1. [01.1-DLT-churn-Qlik.dbc](01.1-DLT-churn-Qlik.dbc)
+   1. [01.1-DLT-churn-Qlik-TDWI.dbc](01.1-DLT-churn-Qlik-TDWI.dbc)
    2. [01.2-DLT-churn-Python-UDF.dbc](01.2-DLT-churn-Python-UDF.dbc)
    3. [04.1-automl-churn-prediction.dbc](04.1-automl-churn-prediction.dbc)
    4. [./resources](_resources.dbc)

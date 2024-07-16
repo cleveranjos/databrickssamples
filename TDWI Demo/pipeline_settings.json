@@ -1,0 +1,34 @@
+{
+    "id": "9dd8827e-fb11-450b-ba9b-1047b546e6df",
+    "pipeline_type": "WORKSPACE",
+    "clusters": [
+        {
+            "label": "default",
+            "autoscale": {
+                "min_workers": 1,
+                "max_workers": 5,
+                "mode": "LEGACY"
+            }
+        }
+    ],
+    "development": false,
+    "continuous": false,
+    "channel": "CURRENT",
+    "photon": false,
+    "libraries": [
+        {
+            "notebook": {
+                "path": "/Users/clever.anjos@qlik.com/TDWI Databricks - Qlik Webinar/lakehouse-retail-c360/01-Data-ingestion/01.2-DLT-churn-Python-UDF"
+            }
+        },
+        {
+            "notebook": {
+                "path": "/Users/clever.anjos@qlik.com/TDWI Databricks - Qlik Webinar/lakehouse-retail-c360/01-Data-ingestion/01.1-DLT-churn-Qlik-TDWI"
+            }
+        }
+    ],
+    "name": "TDWI",
+    "edition": "ADVANCED",
+    "storage": "dbfs:/pipelines/9dd8827e-fb11-450b-ba9b-1047b546e6df",
+    "target": "customer_360"
+}

@@ -8,7 +8,7 @@
     * 1.1\. Qlik Talend Cloud instance with On-Prem Databases - Docker   **OR** any MySQL database that you have access using a DM Gateway
     * 1.2\. Databricks Instance [Provision](Provision/1-QMI-Databricks.md)
     
-* 2\. MySQL database dump [download link](databasedump/dump-movies)
+* 2\. MySQL database dump [download link](databasedump/movies.sql)
 * 3\. Qlik Talend Data Integration tenant
  
 
@@ -33,3 +33,5 @@
 12. Press **Start** and wait for the completion (usually takes 40 seconds to complete)
 13. Validate if three tables were imported as the image below
 ![image info](img/MySQL004.png)
+14. Validate if some events were added as the image below. *These events will automatically add/update/delete records to your database, to make the CDC part easier to demo*
+![image info](img/MySQL005.png)

@@ -4,15 +4,15 @@
 
 ### You will need:
  
-* 1\. [QMI instances](https://qmicloud.qliktech.com/): 
-    * 1.1\. Qlik Talend Cloud instance with On-Prem Databases - Docker   **OR** any MySQL database that you have access using a DM Gateway
-    * 1.2\. Databricks Instance [Provision](Provision/1-QMI-Databricks.md)
+1\. [QMI instances](https://qmicloud.qliktech.com/): 
+&emsp;1.1\. Qlik Talend Cloud instance with On-Prem Databases - Docker   **OR** any MySQL database that you have access using a DM Gateway
+&emsp;1.2\. Databricks Instance [How to Provision](Provision/1-QMI-Databricks.md)
     
-* 2\. MySQL database dump [download link](databasedump/movies.sql)
-* 3\. Qlik Talend Data Integration tenant
+2\. MySQL database dump [download link](databasedump/movies.sql)
+3\. Qlik Talend Data Integration tenant
  
 
-### Database import
+### 1 - Database import
 
 1. RDP to your QMI Qlik Talend Cloud instance
 2. Click on the **Database Control** icon
@@ -49,3 +49,5 @@
 13.  Validate if some events were added as the image below. *These events will automatically add/update/delete records to your database, to make the CDC part easier to demo*
 
 ![image info](img/MySQL005.png)
+
+### 2 - Creating the Connections

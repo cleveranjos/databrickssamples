@@ -51,3 +51,9 @@
 ![image info](img/MySQL005.png)
 
 ### 2 - Creating the Connections
+
+1\. Navigate to your Qlik Talend Data Integration
+2\. Create the following connections:
+&emsp;2.1\. **Databricks** using the credentials provided by [QMI Cloud](https://qmicloud.qliktech.com/provisions)
+&emsp;2.2\. **ADLS** using the credentials provided by [QMI Cloud](https://qmicloud.qliktech.com/provisions) 
+&emsp;2.3\. **MySQL** using the credentials provided by 

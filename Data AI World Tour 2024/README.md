@@ -9,6 +9,7 @@
 &emsp;1.2\. Databricks Instance [How to Provision](Provision/1-QMI-Databricks.md)
     
 2\. MySQL database dump [download link](databasedump/movies.sql)
+
 3\. Qlik Talend Data Integration tenant
  
 
@@ -20,11 +21,12 @@
 ![image info](img/QMI003.png)
 
 3. Select the MySQL option and press the **Start Button**
+   
 ![image info](img/QMI004.png)
 
-4. Download the MySQL database dump 
-5. Open the DBeaver client using the taskbar icon
-6. Locate the MySQL 8+ connection and expand the **Databases** tree option d
+1. Download the MySQL database dump 
+2. Open the DBeaver client using the taskbar icon
+3. Locate the MySQL 8+ connection and expand the **Databases** tree option d
 
 ![image info](img/MySQL001.png)
 
@@ -44,16 +46,21 @@
 11.  Press **Start** and wait for the completion (usually takes 40 seconds to complete)
 12.  Validate if three tables were imported as the image below
 
-![image info](img/MySQL004.png)
+![image info](img/MySQL005.png)
 
 13.  Validate if some events were added as the image below. *These events will automatically add/update/delete records to your database, to make the CDC part easier to demo*
 
-![image info](img/MySQL005.png)
+![image info](img/MySQL006.png)
 
 ### 2 - Creating the Connections
 
 1\. Navigate to your Qlik Talend Data Integration
+
 2\. Create the following connections:
+
 &emsp;2.1\. **Databricks** using the credentials provided by [QMI Cloud](https://qmicloud.qliktech.com/provisions)
+
 &emsp;2.2\. **ADLS** using the credentials provided by [QMI Cloud](https://qmicloud.qliktech.com/provisions) 
-&emsp;2.3\. **MySQL** using the instructions provided by the QMI Cloud Talend Cloud instance
+
+&emsp;2.3\. **MySQL** using the credentials provided by the QMI Cloud Talend Cloud instance user.txt file (usually opened in the Notepad++), hostname is **mysql.attunitydemo.com**
+'

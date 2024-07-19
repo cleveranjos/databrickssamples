@@ -56,11 +56,18 @@
 
 1\. Navigate to your Qlik Talend Data Integration
 
-2\. Create the following connections:
+2\. Create the following connections, it´s recommended to have them in the same space:
 
-&emsp;2.1\. **Databricks** using the credentials provided by [QMI Cloud](https://qmicloud.qliktech.com/provisions)
+&emsp;2.1\. **Databricks** using the credentials provided by [QMI Cloud](https://qmicloud.qliktech.com/provisions). Please pay attention to use the catalog provided to your user as described in the QMI Cloud *Provision Information**
+
+![image info](img/Databricks001.png)
+
 
 &emsp;2.2\. **ADLS** using the credentials provided by [QMI Cloud](https://qmicloud.qliktech.com/provisions) 
 
 &emsp;2.3\. **MySQL** using the credentials provided by the QMI Cloud Talend Cloud instance user.txt file (usually opened in the Notepad++), hostname is **mysql.attunitydemo.com**
 '
+
+3\. Check if you have all the three connections created
+
+![image info](img/Connections.png)

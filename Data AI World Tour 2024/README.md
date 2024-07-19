@@ -56,4 +56,4 @@
 2\. Create the following connections:
 &emsp;2.1\. **Databricks** using the credentials provided by [QMI Cloud](https://qmicloud.qliktech.com/provisions)
 &emsp;2.2\. **ADLS** using the credentials provided by [QMI Cloud](https://qmicloud.qliktech.com/provisions) 
-&emsp;2.3\. **MySQL** using the credentials provided by 
+&emsp;2.3\. **MySQL** using the instructions provided by the QMI Cloud Talend Cloud instance

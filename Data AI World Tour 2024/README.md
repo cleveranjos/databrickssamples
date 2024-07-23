@@ -74,4 +74,8 @@
 ![image info](img/Connections.png)
 
 
+4\. Import the data pipeline JSON file to the same space. *You might need to reconfigure the connections to your project*
+
+5\. Prepare and run all the tasks
+
 You are now ready to deliver the demo using the [DemoScript](DemoScript.md)

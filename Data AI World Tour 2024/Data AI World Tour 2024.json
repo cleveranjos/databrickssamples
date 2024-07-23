@@ -1,0 +1,1718 @@
+{
+  "bindings": {
+    "project": {
+      "space": "QMI Demos",
+      "id": "${data_ai_world_tour_2024}",
+      "name": "Data AI World Tour 2024",
+      "type": "DATA_PIPELINE",
+      "description": "",
+      "schemaPrefix": "",
+      "lakehouseType": "DATABRICKS",
+      "originalLakehouseType": "DATABRICKS",
+      "storageConnection": {
+        "type": "reptgt_qdidatabricks",
+        "space": "QMI Demos",
+        "name": "Databricks_Target",
+        "id": "508d84fa-8e2d-4eed-8ae3-bcfc8f399533",
+        "kindId": null
+      },
+      "landingStorageConnection": {
+        "type": "reptgt_qdiadls",
+        "space": "QMI Demos",
+        "name": "Azure_Data_Lake_Storage_Target",
+        "id": "cafaf006-841b-43d7-8692-d26563883c24",
+        "kindId": null
+      },
+      "qvdStorageLocationType": "NONE"
+    },
+    "appSourceConnections": {
+      "${onboarding_landing-bsw4.connection}": "QMI Demos.MySQL"
+    },
+    "sourceConnections": {
+      "QMI Demos.MySQL": {
+        "type": "repsrc_mysql",
+        "space": "QMI Demos",
+        "name": "MySQL",
+        "id": "c6e9628b-dfce-4210-a1f9-a738ba08b867",
+        "kindId": null
+      }
+    },
+    "appTargetConnections": {},
+    "targetConnections": {},
+    "databases": {
+      "landing": "cleas_6696985a0f3cd77e4d83a879",
+      "storage": "cleas_6696985a0f3cd77e4d83a879",
+      "transform": "cleas_6696985a0f3cd77e4d83a879",
+      "datamart": "cleas_6696985a0f3cd77e4d83a879",
+      "registeredData": "cleas_6696985a0f3cd77e4d83a879",
+      "appOverrides": {}
+    },
+    "executionEngines": {
+      "landing": "",
+      "storage": "",
+      "transform": "",
+      "datamart": "",
+      "registeredData": null,
+      "appOverrides": {}
+    },
+    "dataAssetsMapping": [
+      {
+        "appId": "onboarding_landing-bsw4",
+        "mappings": [
+          {
+            "from": {
+              "database": null,
+              "schema": "movies"
+            },
+            "to": {
+              "database": null,
+              "schema": "movies"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "projectSettings": {
+    "storageSettingsDefaults": {
+      "materialized": true,
+      "hasHistory": true,
+      "transactionalLiveViews": false,
+      "hasLiveViews": true,
+      "hasChanges": true,
+      "hasCurrent": true,
+      "dataAppRuntime": {
+        "tableUpdateInterval": 15,
+        "tableUpdateConcurrency": 10,
+        "maxNumberOfRecords": 0,
+        "workloadExecutionEngine": {
+          "engineType": "DEFAULT",
+          "name": ""
+        }
+      },
+      "dataAppSchedulingInfo": {
+        "runInterval": 15,
+        "schedulingType": "TIME_BASED"
+      },
+      "catalogSettings": {
+        "publish": false,
+        "tags": []
+      },
+      "database": {
+        "connectionType": "DEFAULT",
+        "name": "cleas_6696985a0f3cd77e4d83a879"
+      }
+    },
+    "landingSettingsDefaults": {
+      "hasChanges": true,
+      "hasCurrent": false,
+      "dataAppRuntime": {
+        "tableLoadInParallel": 5,
+        "changeProcessingInterval": 60,
+        "sourceCdcFetchIntervalMinutes": 15,
+        "initialLoadMode": "useCache",
+        "workloadExecutionEngine": {
+          "engineType": "DEFAULT",
+          "name": ""
+        }
+      },
+      "folderLocationType": "DATA_ASSET_NAME",
+      "specificFolder": "",
+      "proxySettings": {
+        "proxyOdbc": false,
+        "proxyStorage": false
+      },
+      "database": {
+        "connectionType": "DEFAULT",
+        "name": "cleas_6696985a0f3cd77e4d83a879"
+      }
+    },
+    "transformSettingsDefaults": {
+      "materialized": false,
+      "hasHistory": true,
+      "transactionalLiveViews": false,
+      "hasLiveViews": false,
+      "hasChanges": true,
+      "hasCurrent": true,
+      "dataAppRuntime": {
+        "tableUpdateInterval": 15,
+        "tableUpdateConcurrency": 10,
+        "maxNumberOfRecords": 0,
+        "workloadExecutionEngine": {
+          "engineType": "DEFAULT",
+          "name": ""
+        }
+      },
+      "dataAppSchedulingInfo": {
+        "runInterval": 15,
+        "schedulingType": "EVENT_BASED"
+      },
+      "catalogSettings": {
+        "publish": false,
+        "tags": []
+      },
+      "database": {
+        "connectionType": "DEFAULT",
+        "name": "cleas_6696985a0f3cd77e4d83a879"
+      }
+    },
+    "datamartSettingsDefaults": {
+      "materialized": true,
+      "hasHistory": false,
+      "transactionalLiveViews": false,
+      "hasLiveViews": false,
+      "hasChanges": false,
+      "hasCurrent": true,
+      "dataAppRuntime": {
+        "tableUpdateInterval": 15,
+        "tableUpdateConcurrency": 10,
+        "maxNumberOfRecords": 0,
+        "workloadExecutionEngine": {
+          "engineType": "DEFAULT",
+          "name": ""
+        }
+      },
+      "dataAppSchedulingInfo": {
+        "runInterval": 15,
+        "schedulingType": "EVENT_BASED"
+      },
+      "catalogSettings": {
+        "publish": true,
+        "tags": []
+      },
+      "database": {
+        "connectionType": "DEFAULT",
+        "name": "cleas_6696985a0f3cd77e4d83a879"
+      }
+    },
+    "artifactsNamingDefaults": {
+      "suffixLiveViews": "__live",
+      "suffixChangesView": "__changes",
+      "suffixCurrentView": "",
+      "suffixHistoryViews": "__history",
+      "suffixLiveHistoryViews": "__live_history",
+      "suffixInternalSchema": "__internal",
+      "prefixHeaderColumns": "hdr__",
+      "prefixSchema": ""
+    },
+    "qvdStorageSettingsDefaults": {
+      "folderLocationType": "DATA_ASSET_NAME",
+      "specificFolder": ""
+    },
+    "registeredSettingsDefaults": {
+      "incrementalSettings": {
+        "registeredType": "NONE",
+        "watermarkColumnName": null,
+        "useBatchTimeAsFromDate": false,
+        "fromDateColumnName": null,
+        "useSameTableAsCt": false,
+        "ctTableName": null,
+        "softDeleteSupport": false,
+        "softDeleteExpression": null,
+        "priorImageSupport": false,
+        "priorImageExpression": null
+      },
+      "catalogSettings": {
+        "publish": false,
+        "tags": []
+      },
+      "database": {
+        "connectionType": "DEFAULT",
+        "name": "cleas_6696985a0f3cd77e4d83a879"
+      }
+    },
+    "loggingTableSettings": {
+      "artifactsLocation": {
+        "internalSchema": "PROJECT_INTERNAL",
+        "externalSchema": "PROJECT_EXTERNAL",
+        "database": ""
+      }
+    },
+    "docPublishingSettingsDefaults": {
+      "dataAppRuntime": {
+        "tableUpdateInterval": 15,
+        "tableUpdateConcurrency": 10,
+        "maxNumberOfRecords": 0,
+        "workloadExecutionEngine": {
+          "engineType": "DEFAULT",
+          "name": ""
+        }
+      },
+      "dataAppSchedulingInfo": null,
+      "computeEndpoint": "qlik_vector_compute",
+      "database": {
+        "connectionType": "DEFAULT",
+        "name": ""
+      }
+    },
+    "filePublishingSettingsDefaults": {
+      "dataAppSchedulingInfo": null,
+      "computeEndpoint": "qlik_vector_compute",
+      "database": {
+        "connectionType": "DEFAULT",
+        "name": ""
+      }
+    }
+  },
+  "batchMode": true,
+  "projectProperties": {
+    "modelBased": false
+  },
+  "apps": [
+    {
+      "app": {
+        "type": "LANDING_SAAS_MANAGED",
+        "subType": null,
+        "id": "onboarding_landing-bsw4",
+        "name": "Onboarding_Landing",
+        "description": "",
+        "version": "1",
+        "tags": null
+      },
+      "settings": {
+        "fullLoadOnly": false,
+        "landingAppSettings": {
+          "landingDwSettings": {
+            "landingArtifactsLocation": {
+              "dataAssetSchema": "onboarding_landing",
+              "database": "${landing}"
+            }
+          },
+          "landingStorageSettings": {
+            "folderLocationType": "DATA_ASSET_NAME",
+            "specificFolder": ""
+          },
+          "landingAppRuntime": {
+            "tableLoadInParallel": 5,
+            "changeProcessingInterval": 60,
+            "sourceCdcFetchIntervalMinutes": 60,
+            "initialLoadMode": "useCache",
+            "workloadExecutionEngine": {
+              "engineType": "DEFAULT",
+              "name": ""
+            }
+          },
+          "maximumLobSize": 8,
+          "includeLobColumns": true,
+          "isReplicateLanding": true,
+          "replicateTaskId": null,
+          "landingType": "REPLICATE",
+          "proxySettings": {
+            "proxyOdbc": false,
+            "proxyStorage": false
+          },
+          "artifactsInfo": {
+            "prefixForAllTablesAndViews": "",
+            "liveViews": {
+              "enabled": true,
+              "transactionallyConsistent": false,
+              "currentSuffix": "__live",
+              "historySuffix": "__live_history"
+            },
+            "headerColumnsPrefix": "hdr__",
+            "history": {
+              "enabled": false,
+              "historyViewsSuffix": "__history",
+              "fromDateColumnName": "hdr__from_timestamp",
+              "toDateColumnName": "hdr__to_timestamp",
+              "priorTablesSuffix": "__prior"
+            },
+            "changeTables": {
+              "enabled": true,
+              "tablesSuffix": "__ct",
+              "viewsSuffix": "__changes"
+            },
+            "standardViewsWithHeaders": {
+              "enabled": true,
+              "suffix": "__whdr"
+            },
+            "current": {
+              "standardViewsSuffix": "",
+              "currentTablesSuffix": "__current"
+            },
+            "materialized": false,
+            "reloadType": "COMPARE_AND_APPLY_WITH_DELETED_ROWS"
+          },
+          "fileAttributes": {
+            "general": {
+              "maxFileSize": 100,
+              "useCompression": true
+            }
+          },
+          "changeProcessingTuning": {
+            "batchApply": {
+              "applyIntervalMin": 1,
+              "applyIntervalMax": 30,
+              "forceApplyMemory": 500
+            },
+            "batchSplitSize": {
+              "isChecked": false,
+              "value": 10000
+            },
+            "transactionTuning": {
+              "cacheSize": 50,
+              "transactionTotalMemory": {
+                "isChecked": true,
+                "value": 1024
+              },
+              "transactionDuration": {
+                "isChecked": false,
+                "value": 60
+              },
+              "offloadTransactions": {
+                "storeRecoveryData": false,
+                "applyUsingMerge": false,
+                "optimizeInserts": false,
+                "deleteAndInsertOnPkUpdate": true
+              }
+            },
+            "transactionalApply": {
+              "transactionMinChanges": 1000,
+              "batchTransactionsMaxTime": 1
+            }
+          },
+          "applyChangesOptions": {
+            "changeProcessingTuning": {
+              "batchApplyEnabled": true,
+              "applyChangesMultipleTablesConcurrently": false,
+              "maxTables": 5
+            }
+          },
+          "errorHandling": {
+            "applyConflicts": {
+              "insertPolicy": "ERROR_POLICY_LOG_ERROR",
+              "updatePolicy": "ERROR_POLICY_LOG_ERROR",
+              "deletePolicy": "ERROR_POLICY_IGNORE_RECORD",
+              "escalationCount": {
+                "isChecked": false,
+                "value": 50
+              },
+              "escalationPolicy": "ERROR_POLICY_LOG_ERROR"
+            },
+            "data": {
+              "truncationPolicyErrors": "ERROR_POLICY_IGNORE_RECORD",
+              "policyErrors": "ERROR_POLICY_IGNORE_RECORD",
+              "escalationPolicy": "ERROR_POLICY_SUSPEND_TABLE",
+              "escalationCount": {
+                "isChecked": false,
+                "value": 50
+              }
+            },
+            "tableError": {
+              "policyErrors": "ERROR_POLICY_SUSPEND_TABLE",
+              "escalationPolicy": "ERROR_POLICY_STOP_TASK",
+              "escalationCount": {
+                "isChecked": false,
+                "value": 50
+              }
+            },
+            "environmental": {
+              "interval": 5,
+              "maximumRetryCount": {
+                "isChecked": true,
+                "value": -1
+              },
+              "maximumRetryInterval": {
+                "isChecked": true,
+                "value": 1800
+              }
+            }
+          },
+          "metadata": {
+            "lobHandling": {
+              "lobChunkSize": 64,
+              "optimizeLobSizeEnabled": false,
+              "optimizeLobSize": 1,
+              "optimizeLobSizeHandlingUnit": "KILOBYTE",
+              "lobColumns": "REPLICATE_LIMITED_LOB_COLUMN"
+            },
+            "controlTableSelection": [
+              {
+                "tableId": "APPLY_EXCEPTIONS",
+                "targetName": "attrep_apply_exceptions",
+                "isChecked": false
+              },
+              {
+                "tableId": "REPLICATION_STATUS",
+                "targetName": "attrep_status",
+                "isChecked": false
+              },
+              {
+                "tableId": "SUSPENDED_TABLES",
+                "targetName": "attrep_suspended_tables",
+                "isChecked": false
+              },
+              {
+                "tableId": "REPLICATION_HISTORY",
+                "targetName": "attrep_history",
+                "isChecked": false
+              },
+              {
+                "tableId": "CHANGE_DATA_PARTITIONS",
+                "targetName": "attrep_cdc_partitions",
+                "isChecked": false
+              },
+              {
+                "tableId": "DDL_HISTORY",
+                "targetName": "attrep_ddl_history",
+                "isChecked": false
+              }
+            ]
+          },
+          "characterSubstitution": {
+            "sourceTargetCharacters": [],
+            "validationSet": {
+              "characterName": null,
+              "substituteCharacter": 0
+            }
+          },
+          "moreOptions": [],
+          "storeChangesOptions": {
+            "changeTableHeaderColumn": [
+              {
+                "id": "CHANGE_SEQUENCE",
+                "headerColumn": "change_seq",
+                "isChecked": true
+              },
+              {
+                "id": "CHANGE_OPERATION",
+                "headerColumn": "change_oper",
+                "isChecked": true
+              },
+              {
+                "id": "CHANGE_MASK",
+                "headerColumn": "change_mask",
+                "isChecked": true
+              },
+              {
+                "id": "STREAM_POSITION",
+                "headerColumn": "stream_position",
+                "isChecked": false
+              },
+              {
+                "id": "OPERATION",
+                "headerColumn": "operation",
+                "isChecked": true
+              },
+              {
+                "id": "TRANSACTION_ID",
+                "headerColumn": "transaction_id",
+                "isChecked": false
+              },
+              {
+                "id": "TIMESTAMP",
+                "headerColumn": "timestamp",
+                "isChecked": true
+              },
+              {
+                "id": "PARTITION_NAME",
+                "headerColumn": "partition_name",
+                "isChecked": false
+              }
+            ]
+          },
+          "fullLoadOptions": {
+            "afterFullLoadCompleted": {
+              "createKeyOrUniqueIndex": false
+            },
+            "fullLoadOptionsTuning": {
+              "maxTables": 5,
+              "consistencyTimeout": 600,
+              "commitRate": 10000
+            }
+          }
+        },
+        "transformAppSettings": null,
+        "storageAppSettings": null,
+        "datamartAppSettings": null,
+        "qvdStorageAppSettings": null,
+        "registeredAppSettings": null,
+        "replicationAppSettings": null,
+        "consolidationAppSettings": null,
+        "publishingAppSettings": null,
+        "distributionAppSettings": null,
+        "lakeLandingAppSettings": null,
+        "docPublishAppSettings": null,
+        "filePublishAppSettings": null,
+        "isDummySettings": null
+      },
+      "sourceSelection": {
+        "dataEntitiesSelection": {
+          "sourceConnectionId": "${onboarding_landing-bsw4.connection}",
+          "includePatterns": [],
+          "excludePatterns": [],
+          "dataEntities": [
+            {
+              "type": "TABLE",
+              "entityId": "$replicate$movies_name",
+              "schema": "movies",
+              "database": null,
+              "name": "name",
+              "projectId": "${data_ai_world_tour_2024}",
+              "dataAppId": "onboarding_landing-bsw4"
+            },
+            {
+              "type": "TABLE",
+              "entityId": "$replicate$movies_title_basics",
+              "schema": "movies",
+              "database": null,
+              "name": "title_basics",
+              "projectId": "${data_ai_world_tour_2024}",
+              "dataAppId": "onboarding_landing-bsw4"
+            },
+            {
+              "type": "TABLE",
+              "entityId": "$replicate$movies_title_ratings",
+              "schema": "movies",
+              "database": null,
+              "name": "title_ratings",
+              "projectId": "${data_ai_world_tour_2024}",
+              "dataAppId": "onboarding_landing-bsw4"
+            }
+          ]
+        }
+      },
+      "dataEntities": [
+        {
+          "type": "LANDING",
+          "virtualEntity": false,
+          "inputDataEntities": [
+            {
+              "type": "TABLE",
+              "entityId": "$replicate$movies_name",
+              "schema": "movies",
+              "database": null,
+              "name": "name",
+              "projectId": "${data_ai_world_tour_2024}",
+              "dataAppId": "onboarding_landing-bsw4"
+            }
+          ],
+          "dataEntityAttributes": null,
+          "tableDef": null,
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "id": "name",
+          "name": "name",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "LANDING",
+          "virtualEntity": false,
+          "inputDataEntities": [
+            {
+              "type": "TABLE",
+              "entityId": "$replicate$movies_title_basics",
+              "schema": "movies",
+              "database": null,
+              "name": "title_basics",
+              "projectId": "${data_ai_world_tour_2024}",
+              "dataAppId": "onboarding_landing-bsw4"
+            }
+          ],
+          "dataEntityAttributes": null,
+          "tableDef": null,
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "id": "title_basics",
+          "name": "title_basics",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "LANDING",
+          "virtualEntity": false,
+          "inputDataEntities": [
+            {
+              "type": "TABLE",
+              "entityId": "$replicate$movies_title_ratings",
+              "schema": "movies",
+              "database": null,
+              "name": "title_ratings",
+              "projectId": "${data_ai_world_tour_2024}",
+              "dataAppId": "onboarding_landing-bsw4"
+            }
+          ],
+          "dataEntityAttributes": null,
+          "tableDef": null,
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "id": "title_ratings",
+          "name": "title_ratings",
+          "description": "",
+          "version": "1",
+          "tags": null
+        }
+      ],
+      "modelBasedMappings": {},
+      "cachedDataEntities": [
+        {
+          "type": "LANDING",
+          "virtualEntity": false,
+          "inputDataEntities": null,
+          "dataEntityAttributes": null,
+          "tableDef": {
+            "name": "name",
+            "dbSchema": "movies",
+            "dbName": null,
+            "columns": null,
+            "datasetId": null,
+            "dbTableId": null,
+            "entityId": null,
+            "secureQri": "",
+            "fullLoadOnly": false
+          },
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "id": "$replicate$movies_name",
+          "name": "movies_name",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "LANDING",
+          "virtualEntity": false,
+          "inputDataEntities": null,
+          "dataEntityAttributes": null,
+          "tableDef": {
+            "name": "title_basics",
+            "dbSchema": "movies",
+            "dbName": null,
+            "columns": null,
+            "datasetId": null,
+            "dbTableId": null,
+            "entityId": null,
+            "secureQri": "",
+            "fullLoadOnly": false
+          },
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "id": "$replicate$movies_title_basics",
+          "name": "movies_title_basics",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "LANDING",
+          "virtualEntity": false,
+          "inputDataEntities": null,
+          "dataEntityAttributes": null,
+          "tableDef": {
+            "name": "title_ratings",
+            "dbSchema": "movies",
+            "dbName": null,
+            "columns": null,
+            "datasetId": null,
+            "dbTableId": null,
+            "entityId": null,
+            "secureQri": "",
+            "fullLoadOnly": false
+          },
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "id": "$replicate$movies_title_ratings",
+          "name": "movies_title_ratings",
+          "description": "",
+          "version": "1",
+          "tags": null
+        }
+      ],
+      "rulesets": [],
+      "entityRelationship": [],
+      "schedulings": [],
+      "dataFlows": null
+    },
+    {
+      "app": {
+        "type": "STORAGE",
+        "subType": null,
+        "id": "bronze-bsw5",
+        "name": "Bronze",
+        "description": "",
+        "version": "1",
+        "tags": null
+      },
+      "settings": {
+        "fullLoadOnly": false,
+        "landingAppSettings": null,
+        "transformAppSettings": null,
+        "storageAppSettings": {
+          "artifactsLocation": {
+            "internalSchema": "bronze__internal",
+            "dataAssetSchema": "bronze",
+            "database": "${storage}"
+          },
+          "artifactsInfo": {
+            "prefixForAllTablesAndViews": "",
+            "liveViews": {
+              "enabled": false,
+              "transactionallyConsistent": false,
+              "currentSuffix": "__live",
+              "historySuffix": "__live_history"
+            },
+            "headerColumnsPrefix": "hdr__",
+            "history": {
+              "enabled": false,
+              "historyViewsSuffix": "__history",
+              "fromDateColumnName": "hdr__from_timestamp",
+              "toDateColumnName": "hdr__to_timestamp",
+              "priorTablesSuffix": "__prior"
+            },
+            "changeTables": {
+              "enabled": true,
+              "tablesSuffix": "__ct",
+              "viewsSuffix": "__changes"
+            },
+            "standardViewsWithHeaders": {
+              "enabled": true,
+              "suffix": "__whdr"
+            },
+            "current": {
+              "standardViewsSuffix": "",
+              "currentTablesSuffix": "__current"
+            },
+            "materialized": true,
+            "reloadType": "COMPARE_AND_APPLY_WITH_DELETED_ROWS"
+          },
+          "dataAppRuntime": {
+            "tableUpdateInterval": 15,
+            "tableUpdateConcurrency": 10,
+            "maxNumberOfRecords": 0,
+            "workloadExecutionEngine": {
+              "engineType": "DEFAULT",
+              "name": ""
+            }
+          },
+          "catalogSettings": {
+            "publish": true,
+            "tags": []
+          }
+        },
+        "datamartAppSettings": null,
+        "qvdStorageAppSettings": null,
+        "registeredAppSettings": null,
+        "replicationAppSettings": null,
+        "consolidationAppSettings": null,
+        "publishingAppSettings": null,
+        "distributionAppSettings": null,
+        "lakeLandingAppSettings": null,
+        "docPublishAppSettings": null,
+        "filePublishAppSettings": null,
+        "isDummySettings": null
+      },
+      "sourceSelection": {
+        "dataEntitiesSelection": {
+          "sourceConnectionId": null,
+          "includePatterns": [
+            {
+              "tablePattern": "%",
+              "schemaPattern": "%",
+              "database": null,
+              "entityType": "TABLE",
+              "projectId": "${data_ai_world_tour_2024}",
+              "dataAppId": "onboarding_landing-bsw4"
+            }
+          ],
+          "excludePatterns": [],
+          "dataEntities": []
+        }
+      },
+      "dataEntities": [
+        {
+          "type": "STORAGE",
+          "virtualEntity": false,
+          "inputDataEntities": [
+            {
+              "type": "NONE",
+              "entityId": "name",
+              "schema": null,
+              "database": null,
+              "name": "name",
+              "projectId": "${data_ai_world_tour_2024}",
+              "dataAppId": "onboarding_landing-bsw4"
+            }
+          ],
+          "dataEntityAttributes": {
+            "materialized": "INHERIT",
+            "hasHistory": "INHERIT",
+            "hasLiveViews": "INHERIT",
+            "hasChanges": "INHERIT",
+            "hasStandardViewsWithHeaders": "INHERIT",
+            "watermarkIncrementalSettings": "INHERIT"
+          },
+          "tableDef": null,
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "id": "name-bsw7",
+          "name": "name",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "STORAGE",
+          "virtualEntity": false,
+          "inputDataEntities": [
+            {
+              "type": "NONE",
+              "entityId": "title_ratings",
+              "schema": null,
+              "database": null,
+              "name": "title_ratings",
+              "projectId": "${data_ai_world_tour_2024}",
+              "dataAppId": "onboarding_landing-bsw4"
+            }
+          ],
+          "dataEntityAttributes": {
+            "materialized": "INHERIT",
+            "hasHistory": "INHERIT",
+            "hasLiveViews": "INHERIT",
+            "hasChanges": "INHERIT",
+            "hasStandardViewsWithHeaders": "INHERIT",
+            "watermarkIncrementalSettings": "INHERIT"
+          },
+          "tableDef": null,
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "id": "title_ratings-bsw9",
+          "name": "title_ratings",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "STORAGE",
+          "virtualEntity": false,
+          "inputDataEntities": [
+            {
+              "type": "NONE",
+              "entityId": "title_basics",
+              "schema": null,
+              "database": null,
+              "name": "title_basics",
+              "projectId": "${data_ai_world_tour_2024}",
+              "dataAppId": "onboarding_landing-bsw4"
+            }
+          ],
+          "dataEntityAttributes": {
+            "materialized": "INHERIT",
+            "hasHistory": "INHERIT",
+            "hasLiveViews": "INHERIT",
+            "hasChanges": "INHERIT",
+            "hasStandardViewsWithHeaders": "INHERIT",
+            "watermarkIncrementalSettings": "INHERIT"
+          },
+          "tableDef": null,
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "id": "title_basics-bsw8",
+          "name": "title_basics",
+          "description": "",
+          "version": "1",
+          "tags": null
+        }
+      ],
+      "modelBasedMappings": {},
+      "cachedDataEntities": [],
+      "rulesets": [
+        {
+          "ruleset": {
+            "globalRules": null,
+            "tableRules": [],
+            "enabled": true,
+            "id": "outbound",
+            "name": "outbound",
+            "description": "",
+            "version": "1",
+            "tags": null
+          },
+          "globalRules": [],
+          "tableRules": []
+        }
+      ],
+      "entityRelationship": [],
+      "schedulings": [
+        {
+          "enabled": false,
+          "schedulingType": "TIME_BASED",
+          "timeBasedScheduling": {
+            "schedule": [
+              "RRULE:FREQ=MINUTELY;INTERVAL=15;BYSECOND=0"
+            ],
+            "startDateTime": "2024-07-19T15:34:34.731Z",
+            "endDateTime": null,
+            "timezone": "Etc/UTC"
+          },
+          "eventBasedScheduling": {
+            "eventSchedulingType": "ANY_INPUT_TASK",
+            "triggerApps": []
+          },
+          "id": "schedule-bsw6",
+          "name": "Schedule",
+          "description": "",
+          "version": "1",
+          "tags": null
+        }
+      ],
+      "dataFlows": null
+    },
+    {
+      "app": {
+        "type": "TRANSFORM",
+        "subType": null,
+        "id": "silver-lv8u",
+        "name": "Silver",
+        "description": "",
+        "version": "1",
+        "tags": null
+      },
+      "settings": {
+        "fullLoadOnly": false,
+        "landingAppSettings": null,
+        "transformAppSettings": {
+          "artifactsLocation": {
+            "internalSchema": "silver__internal",
+            "dataAssetSchema": "silver",
+            "database": "${transform}"
+          },
+          "artifactsInfo": {
+            "prefixForAllTablesAndViews": "",
+            "liveViews": {
+              "enabled": false,
+              "transactionallyConsistent": false,
+              "currentSuffix": "__live",
+              "historySuffix": "__live_history"
+            },
+            "headerColumnsPrefix": "hdr__",
+            "history": {
+              "enabled": false,
+              "historyViewsSuffix": "__history",
+              "fromDateColumnName": "hdr__from_timestamp",
+              "toDateColumnName": "hdr__to_timestamp",
+              "priorTablesSuffix": "__prior"
+            },
+            "changeTables": {
+              "enabled": true,
+              "tablesSuffix": "__ct",
+              "viewsSuffix": "__changes"
+            },
+            "standardViewsWithHeaders": {
+              "enabled": true,
+              "suffix": "__whdr"
+            },
+            "current": {
+              "standardViewsSuffix": "",
+              "currentTablesSuffix": "__current"
+            },
+            "materialized": true,
+            "reloadType": "COMPARE_AND_APPLY_WITH_DELETED_ROWS"
+          },
+          "dataAppRuntime": {
+            "tableUpdateInterval": 15,
+            "tableUpdateConcurrency": 10,
+            "maxNumberOfRecords": 0,
+            "workloadExecutionEngine": {
+              "engineType": "DEFAULT",
+              "name": ""
+            }
+          },
+          "catalogSettings": {
+            "publish": true,
+            "tags": []
+          }
+        },
+        "storageAppSettings": null,
+        "datamartAppSettings": null,
+        "qvdStorageAppSettings": null,
+        "registeredAppSettings": null,
+        "replicationAppSettings": null,
+        "consolidationAppSettings": null,
+        "publishingAppSettings": null,
+        "distributionAppSettings": null,
+        "lakeLandingAppSettings": null,
+        "docPublishAppSettings": null,
+        "filePublishAppSettings": null,
+        "isDummySettings": null
+      },
+      "sourceSelection": {
+        "dataEntitiesSelection": {
+          "sourceConnectionId": null,
+          "includePatterns": [
+            {
+              "tablePattern": "%",
+              "schemaPattern": "%",
+              "database": null,
+              "entityType": "TABLE",
+              "projectId": "${data_ai_world_tour_2024}",
+              "dataAppId": "bronze-bsw5"
+            }
+          ],
+          "excludePatterns": null,
+          "dataEntities": null
+        }
+      },
+      "dataEntities": [
+        {
+          "type": "CUSTOM",
+          "virtualEntity": false,
+          "inputDataEntities": [
+            {
+              "type": "NONE",
+              "entityId": "name-bsw7",
+              "schema": null,
+              "database": null,
+              "name": "name",
+              "projectId": "${data_ai_world_tour_2024}",
+              "dataAppId": "bronze-bsw5"
+            }
+          ],
+          "dataEntityAttributes": {
+            "materialized": "INHERIT",
+            "hasHistory": "INHERIT",
+            "hasLiveViews": "INHERIT",
+            "hasChanges": "INHERIT",
+            "hasStandardViewsWithHeaders": "INHERIT",
+            "watermarkIncrementalSettings": "INHERIT"
+          },
+          "tableDef": {
+            "name": "knowForTitles",
+            "dbSchema": null,
+            "dbName": null,
+            "columns": [
+              {
+                "name": "id",
+                "ordinal": 1,
+                "nullable": false,
+                "primaryKeyOrdinal": 1,
+                "datatype": {
+                  "type": "INT8",
+                  "length": 0,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": "BIGINT",
+                  "originalTypeFull": "BIGINT"
+                },
+                "expression": null,
+                "id": "id",
+                "flags": "NONE"
+              },
+              {
+                "name": "nconst",
+                "ordinal": 2,
+                "nullable": true,
+                "primaryKeyOrdinal": 0,
+                "datatype": {
+                  "type": "STRING",
+                  "length": 255,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": "STRING",
+                  "originalTypeFull": "STRING"
+                },
+                "expression": null,
+                "id": "nconst",
+                "flags": "NONE"
+              },
+              {
+                "name": "tconst",
+                "ordinal": 3,
+                "nullable": true,
+                "primaryKeyOrdinal": 0,
+                "datatype": {
+                  "type": "STRING",
+                  "length": 255,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": "STRING",
+                  "originalTypeFull": "STRING"
+                },
+                "expression": null,
+                "id": "tconst",
+                "flags": "NONE"
+              }
+            ],
+            "datasetId": null,
+            "dbTableId": null,
+            "entityId": null,
+            "secureQri": "",
+            "fullLoadOnly": false
+          },
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": {
+            "customSql": {
+              "expressionStatement": "select  \n  monotonically_increasing_id() as id,\n  nconst,\n  explode(split(knownForTitles,',' )) as tconst\nfrom ${name}\n",
+              "alias": [
+                {
+                  "name": "name",
+                  "value": "${projectId}$_$bronze-bsw5$_$name-bsw7"
+                }
+              ]
+            },
+            "mapping": null,
+            "incremental": false,
+            "text2sqlPrompt": null,
+            "text2sqlResult": null
+          },
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "id": "knowfortitles-719j",
+          "name": "knowForTitles",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "STORAGE",
+          "virtualEntity": false,
+          "inputDataEntities": [
+            {
+              "type": "NONE",
+              "entityId": "name-bsw7",
+              "schema": null,
+              "database": null,
+              "name": "name",
+              "projectId": "${data_ai_world_tour_2024}",
+              "dataAppId": "bronze-bsw5"
+            }
+          ],
+          "dataEntityAttributes": null,
+          "tableDef": null,
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "id": "name-719k",
+          "name": "name",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "STORAGE",
+          "virtualEntity": false,
+          "inputDataEntities": [
+            {
+              "type": "NONE",
+              "entityId": "title_ratings-bsw9",
+              "schema": null,
+              "database": null,
+              "name": "title_ratings",
+              "projectId": "${data_ai_world_tour_2024}",
+              "dataAppId": "bronze-bsw5"
+            }
+          ],
+          "dataEntityAttributes": null,
+          "tableDef": null,
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "id": "title_ratings-lv8w",
+          "name": "title_ratings",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "STORAGE",
+          "virtualEntity": false,
+          "inputDataEntities": [
+            {
+              "type": "NONE",
+              "entityId": "title_basics-bsw8",
+              "schema": null,
+              "database": null,
+              "name": "title_basics",
+              "projectId": "${data_ai_world_tour_2024}",
+              "dataAppId": "bronze-bsw5"
+            }
+          ],
+          "dataEntityAttributes": null,
+          "tableDef": null,
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "id": "title_basics-rrft",
+          "name": "title_basics",
+          "description": "",
+          "version": "1",
+          "tags": null
+        }
+      ],
+      "modelBasedMappings": {},
+      "cachedDataEntities": [],
+      "rulesets": [
+        {
+          "ruleset": {
+            "globalRules": [
+              "rule-uceo"
+            ],
+            "tableRules": [
+              "name-rrfu",
+              "title_basics_1-57vz"
+            ],
+            "enabled": true,
+            "id": "outbound",
+            "name": "outbound",
+            "description": "",
+            "version": "1",
+            "tags": null
+          },
+          "globalRules": [
+            {
+              "actionType": "CHANGE_COLUMN_DATA_TYPE",
+              "scopeType": "COLUMN",
+              "scope": {
+                "whereOwnerName": "%",
+                "whereTableName": "%",
+                "whereColumnName": "%",
+                "whereDatatype": "WSTRING",
+                "whereExpression": null,
+                "whereColumnKeyAttribute": "ANY",
+                "whereColumnNullability": "ANY"
+              },
+              "action": {
+                "renameType": "RENAME",
+                "expression": null,
+                "value": null,
+                "oldValue": null,
+                "applyColumnDatatype": false,
+                "column": {
+                  "name": null,
+                  "ordinal": 0,
+                  "nullable": true,
+                  "primaryKeyOrdinal": 0,
+                  "datatype": {
+                    "type": "STRING",
+                    "length": 1000,
+                    "precision": 0,
+                    "scale": 0,
+                    "originalType": null,
+                    "originalTypeFull": ""
+                  },
+                  "expression": null,
+                  "id": null,
+                  "flags": "NONE"
+                },
+                "valueMapping": null
+              },
+              "enabled": true,
+              "transformedTableLocal": null,
+              "internalRule": false,
+              "id": "rule-uceo",
+              "name": "Rule",
+              "description": "",
+              "version": "1",
+              "tags": null
+            }
+          ],
+          "tableRules": [
+            {
+              "entityId": "name-719k",
+              "actionType": "LOCAL_MANIPULATION",
+              "scopeType": "COLUMN",
+              "scope": {
+                "whereOwnerName": "%",
+                "whereTableName": "name",
+                "whereColumnName": "%",
+                "whereDatatype": "UNSPECIFIED",
+                "whereExpression": null,
+                "whereColumnKeyAttribute": "ANY",
+                "whereColumnNullability": "ANY"
+              },
+              "action": null,
+              "enabled": true,
+              "transformedTableLocal": {
+                "newTableName": null,
+                "filter": null,
+                "transformedColumnsLocal": [
+                  {
+                    "action": "DROP",
+                    "columnName": "knownForTitles",
+                    "newColumnName": null,
+                    "newDataType": null,
+                    "expression": null,
+                    "primaryKeyOrdinal": 0,
+                    "ordinal": 0,
+                    "nullable": true,
+                    "addedColumnId": null,
+                    "markAsMetadata": false
+                  }
+                ]
+              },
+              "internalRule": false,
+              "id": "name-rrfu",
+              "name": "name",
+              "description": "",
+              "version": "1",
+              "tags": null
+            }
+          ]
+        }
+      ],
+      "entityRelationship": [
+        {
+          "sourceEntity": {
+            "type": "NONE",
+            "entityId": "knowfortitles-719j",
+            "schema": null,
+            "database": null,
+            "name": "knowForTitles",
+            "projectId": "${data_ai_world_tour_2024}",
+            "dataAppId": "silver-lv8u"
+          },
+          "targetEntity": {
+            "type": "NONE",
+            "entityId": "name-719k",
+            "schema": null,
+            "database": null,
+            "name": "name",
+            "projectId": "${data_ai_world_tour_2024}",
+            "dataAppId": "silver-lv8u"
+          },
+          "columnRelationships": [
+            {
+              "sourceColumn": "nconst",
+              "targetColumn": "nconst",
+              "sourceColumnId": "nconst",
+              "targetColumnId": "nconst"
+            }
+          ],
+          "shortName": null,
+          "id": "knowfortitles_name_relation-cphb",
+          "name": "knowForTitles_name_relation",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "sourceEntity": {
+            "type": "NONE",
+            "entityId": "knowfortitles-719j",
+            "schema": null,
+            "database": null,
+            "name": "knowForTitles",
+            "projectId": "${data_ai_world_tour_2024}",
+            "dataAppId": "silver-lv8u"
+          },
+          "targetEntity": {
+            "type": "NONE",
+            "entityId": "title_basics-rrft",
+            "schema": null,
+            "database": null,
+            "name": "title_basics",
+            "projectId": "${data_ai_world_tour_2024}",
+            "dataAppId": "silver-lv8u"
+          },
+          "columnRelationships": [
+            {
+              "sourceColumn": "tconst",
+              "targetColumn": "tconst",
+              "sourceColumnId": "tconst",
+              "targetColumnId": "tconst"
+            }
+          ],
+          "shortName": null,
+          "id": "knowfortitles_title_basics_relation-57wz",
+          "name": "knowForTitles_title_basics_relation",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "sourceEntity": {
+            "type": "NONE",
+            "entityId": "title_basics-rrft",
+            "schema": null,
+            "database": null,
+            "name": "title_basics",
+            "projectId": "${data_ai_world_tour_2024}",
+            "dataAppId": "silver-lv8u"
+          },
+          "targetEntity": {
+            "type": "NONE",
+            "entityId": "title_ratings-lv8w",
+            "schema": null,
+            "database": null,
+            "name": "title_ratings",
+            "projectId": "${data_ai_world_tour_2024}",
+            "dataAppId": "silver-lv8u"
+          },
+          "columnRelationships": [
+            {
+              "sourceColumn": "tconst",
+              "targetColumn": "tconst",
+              "sourceColumnId": "tconst",
+              "targetColumnId": "tconst"
+            }
+          ],
+          "shortName": null,
+          "id": "title_basics_title_ratings_relation-i9y6",
+          "name": "title_basics_title_ratings_relation",
+          "description": "",
+          "version": "1",
+          "tags": null
+        }
+      ],
+      "schedulings": [
+        {
+          "enabled": false,
+          "schedulingType": "EVENT_BASED",
+          "timeBasedScheduling": {
+            "schedule": [],
+            "startDateTime": null,
+            "endDateTime": null,
+            "timezone": null
+          },
+          "eventBasedScheduling": {
+            "eventSchedulingType": "ANY_INPUT_TASK",
+            "triggerApps": []
+          },
+          "id": "schedule-lv8v",
+          "name": "Schedule",
+          "description": "",
+          "version": "1",
+          "tags": null
+        }
+      ],
+      "dataFlows": null
+    },
+    {
+      "app": {
+        "type": "DATAMART",
+        "subType": null,
+        "id": "gold-i9y3",
+        "name": "Gold",
+        "description": "",
+        "version": "1",
+        "tags": null
+      },
+      "settings": {
+        "fullLoadOnly": false,
+        "landingAppSettings": null,
+        "transformAppSettings": null,
+        "storageAppSettings": null,
+        "datamartAppSettings": {
+          "artifactsLocation": {
+            "internalSchema": "gold__internal",
+            "dataAssetSchema": "gold",
+            "database": "${datamart}"
+          },
+          "artifactsInfo": {
+            "prefixForAllTablesAndViews": "",
+            "liveViews": {
+              "enabled": false,
+              "transactionallyConsistent": false,
+              "currentSuffix": "__live",
+              "historySuffix": "__live_history"
+            },
+            "headerColumnsPrefix": "hdr__",
+            "history": {
+              "enabled": false,
+              "historyViewsSuffix": "__history",
+              "fromDateColumnName": "hdr__from_timestamp",
+              "toDateColumnName": "hdr__to_timestamp",
+              "priorTablesSuffix": "__prior"
+            },
+            "changeTables": {
+              "enabled": false,
+              "tablesSuffix": "__ct",
+              "viewsSuffix": "__changes"
+            },
+            "standardViewsWithHeaders": {
+              "enabled": true,
+              "suffix": "__whdr"
+            },
+            "current": {
+              "standardViewsSuffix": "",
+              "currentTablesSuffix": "__t"
+            },
+            "materialized": true,
+            "reloadType": "COMPARE_AND_APPLY_WITH_DELETED_ROWS"
+          },
+          "dataAppRuntime": {
+            "tableUpdateInterval": 15,
+            "tableUpdateConcurrency": 10,
+            "maxNumberOfRecords": 0,
+            "workloadExecutionEngine": {
+              "engineType": "DEFAULT",
+              "name": ""
+            }
+          },
+          "catalogSettings": {
+            "publish": true,
+            "tags": []
+          }
+        },
+        "qvdStorageAppSettings": null,
+        "registeredAppSettings": null,
+        "replicationAppSettings": null,
+        "consolidationAppSettings": null,
+        "publishingAppSettings": null,
+        "distributionAppSettings": null,
+        "lakeLandingAppSettings": null,
+        "docPublishAppSettings": null,
+        "filePublishAppSettings": null,
+        "isDummySettings": null
+      },
+      "sourceSelection": {
+        "dataEntitiesSelection": {
+          "sourceConnectionId": null,
+          "includePatterns": [
+            {
+              "tablePattern": "%",
+              "schemaPattern": "%",
+              "database": null,
+              "entityType": "TABLE",
+              "projectId": "${data_ai_world_tour_2024}",
+              "dataAppId": "silver-lv8u"
+            }
+          ],
+          "excludePatterns": null,
+          "dataEntities": null
+        }
+      },
+      "dataEntities": [],
+      "modelBasedMappings": {},
+      "cachedDataEntities": [],
+      "rulesets": [],
+      "entityRelationship": [],
+      "schedulings": [
+        {
+          "enabled": false,
+          "schedulingType": "EVENT_BASED",
+          "timeBasedScheduling": {
+            "schedule": [],
+            "startDateTime": null,
+            "endDateTime": null,
+            "timezone": null
+          },
+          "eventBasedScheduling": {
+            "eventSchedulingType": "ANY_INPUT_TASK",
+            "triggerApps": []
+          },
+          "id": "schedule-i9y4",
+          "name": "Schedule",
+          "description": "",
+          "version": "1",
+          "tags": null
+        }
+      ],
+      "dataFlows": null
+    }
+  ]
+}

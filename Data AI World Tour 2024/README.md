@@ -74,7 +74,7 @@
 ![image info](img/Connections.png)
 
 
-4\. Import the data pipeline JSON file to the same space. *You might need to reconfigure the connections to your project*
+4\. Import the data pipeline [JSON](Data%20AI%20World%20Tour%202024.json) file to the same space. *You might need to reconfigure the connections to your project*
 
 5\. Prepare and run all the tasks
 

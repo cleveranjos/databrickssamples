@@ -1,4 +1,5 @@
 # Demo Guide for Data AI World Tour 2024
+**Current status:** *ready*
 
 ## Preparation
 
@@ -71,3 +72,6 @@
 3\. Check if you have all the three connections created
 
 ![image info](img/Connections.png)
+
+
+You are now ready to deliver the demo using the [DemoScript](DemoScript.md)

@@ -1,6 +1,19 @@
 # Demo Guide for Data AI World Tour 2024
 **Current status:** *development*
 
+
+
+## Asssets
+1. [Ai Ready Silent video](https://qliktechnologies365.sharepoint.com/:v:/s/QlikPartnerEngineering/EVWrsapT5LNJrs7GCrwhDjQBj5EgAI3IB2VN3V4lNrHweQ?e=ggJDO5) (play the video and you narrate on top of it, embbedable on Powerpoint)
+2. [Ai Ready Silent video Demo] - Self contained demo
+3. [Qlik Analytics integrated with Vector Search silent video]
+4. [Qlik Analytics integrated with Vector Search demo video]
+5. [Databricks Cost Explorer video]
+
+
+
+**Do your own demo**
+
 ## Preparation
 
 ### You will need:
@@ -24,7 +37,12 @@
 ![image info](img/QMI003.png)
 
 3. Select the MySQL option and press the **Start Button**
-   
+
+![image info](img/QMI004.png)   
+
+
+**Optional:** you can use this script to add events that wilk make changes to the database so you don´t need to apply changes manually.
+
 
 ### 2 - Creating the Connections
 

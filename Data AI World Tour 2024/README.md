@@ -3,7 +3,7 @@
 
 
 ## Asssets
-1. [Ai Ready Silent video]() (play the video and you narrate on top of it, embbedable on Powerpoint)
+1. [Ai Ready Silent video] (play the video and you narrate on top of it, embbedable on Powerpoint)
 2. [Ai Ready Silent video Demo] - Self contained demo
 3. [Ai Ready Intro Slides](https://qliktechnologies365-my.sharepoint.com/:p:/r/personal/cuv_qlik_com1/Documents/2024-%20Qlik%20Databricks%20AI%20Tour%20.pptx?d=wc17d44efc5ac455ea389b883d723e252&csf=1&web=1&e=EcURER)
 4. [Qlik Analytics integrated with Vector Search silent video](https://qliktechnologies365.sharepoint.com/:v:/r/sites/QlikPartnerEngineering/Shared%20Documents/Partners/Databricks/DAIS%20Tour/Videos/DAIS%20Tour%20-%20Qlik%20Analytics%20with%20Vector%20Search%20silent%20video.mp4?csf=1&web=1&e=hQ4F0L)

@@ -2,13 +2,14 @@
 **Current status:** *development*
 
 
-
 ## Asssets
 1. [Ai Ready Silent video](https://qliktechnologies365.sharepoint.com/:v:/s/QlikPartnerEngineering/EVWrsapT5LNJrs7GCrwhDjQBj5EgAI3IB2VN3V4lNrHweQ?e=ggJDO5) (play the video and you narrate on top of it, embbedable on Powerpoint)
 2. [Ai Ready Silent video Demo] - Self contained demo
 3. [Qlik Analytics integrated with Vector Search silent video]
 4. [Qlik Analytics integrated with Vector Search demo video]
 5. [Databricks Cost Explorer video]
+6. [SAP Accelerators Video Demo](https://qliktechnologies365-my.sharepoint.com/:v:/r/personal/cuv_qlik_com1/Documents/file%20transfer/SAP%20Accelerators%20Databricks.mp4?csf=1&web=1&e=v4sHno)
+7. [SAP Accelerators Blog Post](https://www.qlik.com/blog/7-easy-steps-to-accelerate-sap-data-replication-in-real-time-in-databricks)
 
 
 

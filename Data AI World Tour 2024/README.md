@@ -2,7 +2,8 @@
 **Current status:** *development*
 
 ## Asssets
-1. [AI-Ready Data Silent video] (play the video and you narrate on top of it, embbedable on Powerpoint)
+*You can use the silent videos and use your own voice*
+1. [AI-Ready Data Silent video](https://qliktechnologies365.sharepoint.com/:v:/r/sites/QlikPartnerEngineering/Shared%20Documents/Partners/Databricks/DAIS%20Tour/Videos/DAIS%20Tour%20-%20AI%20Ready%20Data%20silent%20video.mp4?csf=1&web=1&e=AreTFX)
 2. [AI-Ready Data Demo] - Self contained demo
 3. [AI-Ready Intro Slides](https://qliktechnologies365-my.sharepoint.com/:p:/r/personal/cuv_qlik_com1/Documents/2024-%20Qlik%20Databricks%20AI%20Tour%20.pptx?d=wc17d44efc5ac455ea389b883d723e252&csf=1&web=1&e=EcURER)
 4. [Qlik Analytics integrated with Vector Search silent video](https://qliktechnologies365.sharepoint.com/:v:/r/sites/QlikPartnerEngineering/Shared%20Documents/Partners/Databricks/DAIS%20Tour/Videos/DAIS%20Tour%20-%20Qlik%20Analytics%20with%20Vector%20Search%20silent%20video.mp4?csf=1&web=1&e=hQ4F0L)

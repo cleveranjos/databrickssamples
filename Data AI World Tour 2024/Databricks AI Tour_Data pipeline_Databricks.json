@@ -1,0 +1,5289 @@
+{
+  "bindings": {
+    "project": {
+      "space": "Databricks AI Tour",
+      "id": "${databricks_ai_tour}",
+      "name": "Databricks AI Tour",
+      "type": "DATA_PIPELINE",
+      "description": "",
+      "schemaPrefix": "",
+      "lakehouseType": "DATABRICKS",
+      "originalLakehouseType": "DATABRICKS",
+      "storageConnection": {
+        "type": "reptgt_qdidatabricks",
+        "space": "Databricks AI Tour",
+        "name": "Databricks_Target",
+        "id": "bfed50fc-5bff-4f52-b062-531fe64e8ca3",
+        "kindId": null
+      },
+      "landingStorageConnection": {
+        "type": "reptgt_qdis3",
+        "space": "Databricks AI Tour",
+        "name": "Amazon_S3_Target",
+        "id": "4dd80ce3-54cc-4e68-b435-3a4fc5047701",
+        "kindId": null
+      },
+      "qvdStorageLocationType": "NONE"
+    },
+    "appSourceConnections": {
+      "${onboarding_landing-uboi.connection}": "Databricks AI Tour.MySQL_SOURCE"
+    },
+    "sourceConnections": {
+      "Databricks AI Tour.MySQL_SOURCE": {
+        "type": "repsrc_mysql",
+        "space": "Databricks AI Tour",
+        "name": "MySQL_SOURCE",
+        "id": "0dae4af1-26df-4e9c-94ff-262803289283",
+        "kindId": null
+      }
+    },
+    "appTargetConnections": {
+      "${ai_ready_data-sj3b.publishing_connection.llm_connection_id}": "Databricks AI Tour.Databricks LLM"
+    },
+    "targetConnections": {
+      "Databricks AI Tour.Databricks LLM": {
+        "type": "external_data_provider",
+        "space": "Databricks AI Tour",
+        "name": "Databricks LLM",
+        "id": "08783c19-6554-4017-850f-afec11af8345",
+        "kindId": "llm:Databricks@1.0.0"
+      }
+    },
+    "databases": {
+      "landing": "cleas_6696985a0f3cd77e4d83a879",
+      "storage": "cleas_6696985a0f3cd77e4d83a879",
+      "transform": "cleas_6696985a0f3cd77e4d83a879",
+      "datamart": "cleas_6696985a0f3cd77e4d83a879",
+      "registeredData": "cleas_6696985a0f3cd77e4d83a879",
+      "documentPublishing": null,
+      "filePublishing": null,
+      "appOverrides": {
+        "${onboarding_landing-uboi.database}": "ai_tour",
+        "${bronze-eb-y.database}": "ai_tour",
+        "${silver-b4xn.database}": "ai_tour",
+        "${ai_ready_data-sj3b.database}": "ai_tour"
+      }
+    },
+    "executionEngines": {
+      "landing": "",
+      "storage": "",
+      "transform": "",
+      "datamart": "",
+      "registeredData": null,
+      "documentPublishing": null,
+      "filePublishing": null,
+      "appOverrides": {}
+    },
+    "dataAssetsMapping": [
+      {
+        "appId": "onboarding_landing-uboi",
+        "mappings": [
+          {
+            "from": {
+              "database": null,
+              "schema": "northwind"
+            },
+            "to": {
+              "database": null,
+              "schema": "northwind"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "projectSettings": {
+    "storageSettingsDefaults": {
+      "materialized": true,
+      "hasHistory": true,
+      "transactionalLiveViews": false,
+      "hasLiveViews": true,
+      "hasChanges": true,
+      "hasCurrent": true,
+      "dataAppRuntime": {
+        "tableUpdateInterval": 15,
+        "tableUpdateConcurrency": 10,
+        "maxNumberOfRecords": 0,
+        "workloadExecutionEngine": {
+          "engineType": "DEFAULT",
+          "name": ""
+        }
+      },
+      "dataAppSchedulingInfo": {
+        "runInterval": 15,
+        "schedulingType": "NONE"
+      },
+      "catalogSettings": {
+        "publish": false,
+        "tags": []
+      },
+      "database": {
+        "connectionType": "DEFAULT",
+        "name": "cleas_6696985a0f3cd77e4d83a879"
+      }
+    },
+    "landingSettingsDefaults": {
+      "hasChanges": true,
+      "hasCurrent": false,
+      "dataAppRuntime": {
+        "tableLoadInParallel": 5,
+        "changeProcessingInterval": 60,
+        "sourceCdcFetchIntervalMinutes": 15,
+        "initialLoadMode": "useCache",
+        "workloadExecutionEngine": {
+          "engineType": "DEFAULT",
+          "name": ""
+        }
+      },
+      "folderLocationType": "DATA_ASSET_NAME",
+      "specificFolder": "",
+      "proxySettings": {
+        "proxyOdbc": false,
+        "proxyStorage": false
+      },
+      "database": {
+        "connectionType": "DEFAULT",
+        "name": "cleas_6696985a0f3cd77e4d83a879"
+      }
+    },
+    "transformSettingsDefaults": {
+      "materialized": false,
+      "hasHistory": true,
+      "transactionalLiveViews": false,
+      "hasLiveViews": false,
+      "hasChanges": true,
+      "hasCurrent": true,
+      "dataAppRuntime": {
+        "tableUpdateInterval": 15,
+        "tableUpdateConcurrency": 10,
+        "maxNumberOfRecords": 0,
+        "workloadExecutionEngine": {
+          "engineType": "DEFAULT",
+          "name": ""
+        }
+      },
+      "dataAppSchedulingInfo": {
+        "runInterval": 15,
+        "schedulingType": "EVENT_BASED"
+      },
+      "catalogSettings": {
+        "publish": false,
+        "tags": []
+      },
+      "database": {
+        "connectionType": "DEFAULT",
+        "name": "cleas_6696985a0f3cd77e4d83a879"
+      }
+    },
+    "datamartSettingsDefaults": {
+      "materialized": true,
+      "hasHistory": false,
+      "transactionalLiveViews": false,
+      "hasLiveViews": false,
+      "hasChanges": false,
+      "hasCurrent": true,
+      "dataAppRuntime": {
+        "tableUpdateInterval": 15,
+        "tableUpdateConcurrency": 10,
+        "maxNumberOfRecords": 0,
+        "workloadExecutionEngine": {
+          "engineType": "DEFAULT",
+          "name": ""
+        }
+      },
+      "dataAppSchedulingInfo": {
+        "runInterval": 15,
+        "schedulingType": "EVENT_BASED"
+      },
+      "catalogSettings": {
+        "publish": true,
+        "tags": []
+      },
+      "database": {
+        "connectionType": "DEFAULT",
+        "name": "cleas_6696985a0f3cd77e4d83a879"
+      }
+    },
+    "artifactsNamingDefaults": {
+      "suffixLiveViews": "__live",
+      "suffixChangesView": "__changes",
+      "suffixCurrentView": "",
+      "suffixHistoryViews": "__history",
+      "suffixLiveHistoryViews": "__live_history",
+      "suffixInternalSchema": "__internal",
+      "prefixHeaderColumns": "hdr__",
+      "prefixSchema": ""
+    },
+    "qvdStorageSettingsDefaults": {
+      "folderLocationType": "DATA_ASSET_NAME",
+      "specificFolder": ""
+    },
+    "registeredSettingsDefaults": {
+      "incrementalSettings": {
+        "registeredType": "NONE",
+        "watermarkColumnName": null,
+        "useBatchTimeAsFromDate": false,
+        "fromDateColumnName": null,
+        "useSameTableAsCt": false,
+        "ctTableName": null,
+        "softDeleteSupport": false,
+        "softDeleteExpression": null,
+        "priorImageSupport": false,
+        "priorImageExpression": null
+      },
+      "catalogSettings": {
+        "publish": false,
+        "tags": []
+      },
+      "database": {
+        "connectionType": "DEFAULT",
+        "name": "cleas_6696985a0f3cd77e4d83a879"
+      }
+    },
+    "loggingTableSettings": {
+      "artifactsLocation": {
+        "internalSchema": "PROJECT_INTERNAL",
+        "externalSchema": "PROJECT_EXTERNAL",
+        "database": ""
+      }
+    },
+    "docPublishingSettingsDefaults": {
+      "dataAppRuntime": {
+        "tableUpdateInterval": 15,
+        "tableUpdateConcurrency": 10,
+        "maxNumberOfRecords": 0,
+        "workloadExecutionEngine": {
+          "engineType": "DEFAULT",
+          "name": ""
+        }
+      },
+      "dataAppSchedulingInfo": null,
+      "computeEndpoint": "qlik_vector_compute",
+      "database": {
+        "connectionType": "DEFAULT",
+        "name": ""
+      }
+    },
+    "filePublishingSettingsDefaults": {
+      "dataAppSchedulingInfo": null,
+      "computeEndpoint": "qlik_vector_compute",
+      "database": {
+        "connectionType": "DEFAULT",
+        "name": ""
+      }
+    },
+    "fileLandingSettingsDefaults": {
+      "dataAppSchedulingInfo": null,
+      "database": {
+        "connectionType": "DEFAULT",
+        "name": ""
+      }
+    }
+  },
+  "batchMode": true,
+  "projectProperties": {
+    "modelBased": true
+  },
+  "apps": [
+    {
+      "app": {
+        "type": "LANDING_SAAS_MANAGED",
+        "subType": null,
+        "id": "onboarding_landing-uboi",
+        "name": "Landing",
+        "description": "",
+        "version": "1",
+        "tags": null
+      },
+      "settings": {
+        "fullLoadOnly": true,
+        "landingAppSettings": {
+          "landingDwSettings": {
+            "landingArtifactsLocation": {
+              "dataAssetSchema": "onboarding_landing",
+              "database": "${onboarding_landing-uboi.database}"
+            }
+          },
+          "landingStorageSettings": {
+            "folderLocationType": "DATA_ASSET_NAME",
+            "specificFolder": ""
+          },
+          "landingAppRuntime": {
+            "tableLoadInParallel": 5,
+            "changeProcessingInterval": 60,
+            "sourceCdcFetchIntervalMinutes": 60,
+            "initialLoadMode": "useCache",
+            "workloadExecutionEngine": {
+              "engineType": "DEFAULT",
+              "name": ""
+            }
+          },
+          "maximumLobSize": 8,
+          "includeLobColumns": true,
+          "isReplicateLanding": true,
+          "replicateTaskId": null,
+          "landingType": "REPLICATE",
+          "proxySettings": {
+            "proxyOdbc": false,
+            "proxyStorage": false
+          },
+          "artifactsInfo": {
+            "prefixForAllTablesAndViews": "",
+            "liveViews": {
+              "enabled": true,
+              "transactionallyConsistent": false,
+              "currentSuffix": "__live",
+              "historySuffix": "__live_history"
+            },
+            "headerColumnsPrefix": "hdr__",
+            "history": {
+              "enabled": false,
+              "historyViewsSuffix": "__history",
+              "fromDateColumnName": "hdr__from_timestamp",
+              "toDateColumnName": "hdr__to_timestamp",
+              "priorTablesSuffix": "__prior"
+            },
+            "changeTables": {
+              "enabled": true,
+              "tablesSuffix": "__ct",
+              "viewsSuffix": "__changes"
+            },
+            "standardViewsWithHeaders": {
+              "enabled": true,
+              "suffix": "__whdr"
+            },
+            "current": {
+              "standardViewsSuffix": "",
+              "currentTablesSuffix": "__current"
+            },
+            "materialized": false,
+            "reloadType": "COMPARE_AND_APPLY_WITH_DELETED_ROWS"
+          },
+          "fileAttributes": {
+            "general": {
+              "maxFileSize": 100,
+              "useCompression": true
+            }
+          },
+          "changeProcessingTuning": {
+            "batchApply": {
+              "applyIntervalMin": 1,
+              "applyIntervalMax": 30,
+              "forceApplyMemory": 500
+            },
+            "batchSplitSize": {
+              "isChecked": false,
+              "value": 10000
+            },
+            "transactionTuning": {
+              "cacheSize": 50,
+              "transactionTotalMemory": {
+                "isChecked": true,
+                "value": 1024
+              },
+              "transactionDuration": {
+                "isChecked": false,
+                "value": 60
+              },
+              "offloadTransactions": {
+                "storeRecoveryData": false,
+                "applyUsingMerge": false,
+                "optimizeInserts": false,
+                "deleteAndInsertOnPkUpdate": false
+              }
+            },
+            "transactionalApply": {
+              "transactionMinChanges": 1000,
+              "batchTransactionsMaxTime": 1
+            }
+          },
+          "applyChangesOptions": {
+            "changeProcessingTuning": {
+              "batchApplyEnabled": true,
+              "applyChangesMultipleTablesConcurrently": false,
+              "maxTables": 5
+            }
+          },
+          "errorHandling": {
+            "applyConflicts": {
+              "insertPolicy": "ERROR_POLICY_LOG_ERROR",
+              "updatePolicy": "ERROR_POLICY_LOG_ERROR",
+              "deletePolicy": "ERROR_POLICY_IGNORE_RECORD",
+              "escalationCount": {
+                "isChecked": false,
+                "value": 50
+              },
+              "escalationPolicy": "ERROR_POLICY_LOG_ERROR"
+            },
+            "data": {
+              "truncationPolicyErrors": "ERROR_POLICY_IGNORE_RECORD",
+              "policyErrors": "ERROR_POLICY_IGNORE_RECORD",
+              "escalationPolicy": "ERROR_POLICY_SUSPEND_TABLE",
+              "escalationCount": {
+                "isChecked": false,
+                "value": 50
+              }
+            },
+            "tableError": {
+              "policyErrors": "ERROR_POLICY_SUSPEND_TABLE",
+              "escalationPolicy": "ERROR_POLICY_STOP_TASK",
+              "escalationCount": {
+                "isChecked": false,
+                "value": 50
+              }
+            },
+            "environmental": {
+              "interval": 5,
+              "maximumRetryCount": {
+                "isChecked": true,
+                "value": -1
+              },
+              "maximumRetryInterval": {
+                "isChecked": true,
+                "value": 1800
+              }
+            }
+          },
+          "metadata": {
+            "lobHandling": {
+              "lobChunkSize": 64,
+              "optimizeLobSizeEnabled": false,
+              "optimizeLobSize": 1,
+              "optimizeLobSizeHandlingUnit": "KILOBYTE",
+              "lobColumns": "REPLICATE_LIMITED_LOB_COLUMN"
+            },
+            "controlTableSelection": [
+              {
+                "tableId": "APPLY_EXCEPTIONS",
+                "targetName": "attrep_apply_exceptions",
+                "isChecked": false
+              },
+              {
+                "tableId": "REPLICATION_STATUS",
+                "targetName": "attrep_status",
+                "isChecked": false
+              },
+              {
+                "tableId": "SUSPENDED_TABLES",
+                "targetName": "attrep_suspended_tables",
+                "isChecked": false
+              },
+              {
+                "tableId": "REPLICATION_HISTORY",
+                "targetName": "attrep_history",
+                "isChecked": false
+              },
+              {
+                "tableId": "CHANGE_DATA_PARTITIONS",
+                "targetName": "attrep_cdc_partitions",
+                "isChecked": false
+              },
+              {
+                "tableId": "DDL_HISTORY",
+                "targetName": "attrep_ddl_history",
+                "isChecked": false
+              }
+            ]
+          },
+          "characterSubstitution": {
+            "sourceTargetCharacters": [],
+            "validationSet": {
+              "characterName": null,
+              "substituteCharacter": 0
+            }
+          },
+          "moreOptions": [],
+          "storeChangesOptions": {
+            "changeTableHeaderColumn": [
+              {
+                "id": "CHANGE_SEQUENCE",
+                "headerColumn": "change_seq",
+                "isChecked": true
+              },
+              {
+                "id": "CHANGE_OPERATION",
+                "headerColumn": "change_oper",
+                "isChecked": true
+              },
+              {
+                "id": "CHANGE_MASK",
+                "headerColumn": "change_mask",
+                "isChecked": true
+              },
+              {
+                "id": "STREAM_POSITION",
+                "headerColumn": "stream_position",
+                "isChecked": false
+              },
+              {
+                "id": "OPERATION",
+                "headerColumn": "operation",
+                "isChecked": true
+              },
+              {
+                "id": "TRANSACTION_ID",
+                "headerColumn": "transaction_id",
+                "isChecked": false
+              },
+              {
+                "id": "TIMESTAMP",
+                "headerColumn": "timestamp",
+                "isChecked": true
+              },
+              {
+                "id": "PARTITION_NAME",
+                "headerColumn": "partition_name",
+                "isChecked": false
+              }
+            ]
+          },
+          "fullLoadOptions": {
+            "afterFullLoadCompleted": {
+              "createKeyOrUniqueIndex": false
+            },
+            "fullLoadOptionsTuning": {
+              "maxTables": 5,
+              "consistencyTimeout": 600,
+              "commitRate": 10000
+            }
+          }
+        },
+        "transformAppSettings": null,
+        "storageAppSettings": null,
+        "datamartAppSettings": null,
+        "qvdStorageAppSettings": null,
+        "registeredAppSettings": null,
+        "replicationAppSettings": null,
+        "consolidationAppSettings": null,
+        "publishingAppSettings": null,
+        "distributionAppSettings": null,
+        "lakeLandingAppSettings": null,
+        "docPublishAppSettings": null,
+        "filePublishAppSettings": null,
+        "fileLandingAppSettings": null,
+        "isDummySettings": null
+      },
+      "sourceSelection": {
+        "dataEntitiesSelection": {
+          "sourceConnectionId": "${onboarding_landing-uboi.connection}",
+          "includePatterns": [],
+          "excludePatterns": [],
+          "dataEntities": [
+            {
+              "type": "TABLE",
+              "entityId": "$replicate$northwind_categories",
+              "schema": "northwind",
+              "database": null,
+              "name": "categories",
+              "projectId": "${databricks_ai_tour}",
+              "dataAppId": "onboarding_landing-uboi"
+            },
+            {
+              "type": "TABLE",
+              "entityId": "$replicate$northwind_customer_alt_contact",
+              "schema": "northwind",
+              "database": null,
+              "name": "customer_alt_contact",
+              "projectId": "${databricks_ai_tour}",
+              "dataAppId": "onboarding_landing-uboi"
+            },
+            {
+              "type": "TABLE",
+              "entityId": "$replicate$northwind_customers",
+              "schema": "northwind",
+              "database": null,
+              "name": "customers",
+              "projectId": "${databricks_ai_tour}",
+              "dataAppId": "onboarding_landing-uboi"
+            },
+            {
+              "type": "TABLE",
+              "entityId": "$replicate$northwind_employees",
+              "schema": "northwind",
+              "database": null,
+              "name": "employees",
+              "projectId": "${databricks_ai_tour}",
+              "dataAppId": "onboarding_landing-uboi"
+            },
+            {
+              "type": "TABLE",
+              "entityId": "$replicate$northwind_order_details",
+              "schema": "northwind",
+              "database": null,
+              "name": "order_details",
+              "projectId": "${databricks_ai_tour}",
+              "dataAppId": "onboarding_landing-uboi"
+            },
+            {
+              "type": "TABLE",
+              "entityId": "$replicate$northwind_orders",
+              "schema": "northwind",
+              "database": null,
+              "name": "orders",
+              "projectId": "${databricks_ai_tour}",
+              "dataAppId": "onboarding_landing-uboi"
+            },
+            {
+              "type": "TABLE",
+              "entityId": "$replicate$northwind_products",
+              "schema": "northwind",
+              "database": null,
+              "name": "products",
+              "projectId": "${databricks_ai_tour}",
+              "dataAppId": "onboarding_landing-uboi"
+            },
+            {
+              "type": "TABLE",
+              "entityId": "$replicate$northwind_shippers",
+              "schema": "northwind",
+              "database": null,
+              "name": "shippers",
+              "projectId": "${databricks_ai_tour}",
+              "dataAppId": "onboarding_landing-uboi"
+            },
+            {
+              "type": "TABLE",
+              "entityId": "$replicate$northwind_suppliers",
+              "schema": "northwind",
+              "database": null,
+              "name": "suppliers",
+              "projectId": "${databricks_ai_tour}",
+              "dataAppId": "onboarding_landing-uboi"
+            }
+          ]
+        }
+      },
+      "dataEntities": [
+        {
+          "type": "LANDING",
+          "virtualEntity": false,
+          "inputDataEntities": [
+            {
+              "type": "TABLE",
+              "entityId": "$replicate$northwind_categories",
+              "schema": "northwind",
+              "database": null,
+              "name": "categories",
+              "projectId": "${databricks_ai_tour}",
+              "dataAppId": "onboarding_landing-uboi"
+            }
+          ],
+          "dataEntityAttributes": null,
+          "tableDef": null,
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "id": "categories",
+          "name": "categories",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "LANDING",
+          "virtualEntity": false,
+          "inputDataEntities": [
+            {
+              "type": "TABLE",
+              "entityId": "$replicate$northwind_customer_alt_contact",
+              "schema": "northwind",
+              "database": null,
+              "name": "customer_alt_contact",
+              "projectId": "${databricks_ai_tour}",
+              "dataAppId": "onboarding_landing-uboi"
+            }
+          ],
+          "dataEntityAttributes": null,
+          "tableDef": null,
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "id": "customer_alt_contact",
+          "name": "customer_alt_contact",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "LANDING",
+          "virtualEntity": false,
+          "inputDataEntities": [
+            {
+              "type": "TABLE",
+              "entityId": "$replicate$northwind_customers",
+              "schema": "northwind",
+              "database": null,
+              "name": "customers",
+              "projectId": "${databricks_ai_tour}",
+              "dataAppId": "onboarding_landing-uboi"
+            }
+          ],
+          "dataEntityAttributes": null,
+          "tableDef": null,
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "id": "customers",
+          "name": "customers",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "LANDING",
+          "virtualEntity": false,
+          "inputDataEntities": [
+            {
+              "type": "TABLE",
+              "entityId": "$replicate$northwind_employees",
+              "schema": "northwind",
+              "database": null,
+              "name": "employees",
+              "projectId": "${databricks_ai_tour}",
+              "dataAppId": "onboarding_landing-uboi"
+            }
+          ],
+          "dataEntityAttributes": null,
+          "tableDef": null,
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "id": "employees",
+          "name": "employees",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "LANDING",
+          "virtualEntity": false,
+          "inputDataEntities": [
+            {
+              "type": "TABLE",
+              "entityId": "$replicate$northwind_order_details",
+              "schema": "northwind",
+              "database": null,
+              "name": "order_details",
+              "projectId": "${databricks_ai_tour}",
+              "dataAppId": "onboarding_landing-uboi"
+            }
+          ],
+          "dataEntityAttributes": null,
+          "tableDef": null,
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "id": "order_details",
+          "name": "order_details",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "LANDING",
+          "virtualEntity": false,
+          "inputDataEntities": [
+            {
+              "type": "TABLE",
+              "entityId": "$replicate$northwind_orders",
+              "schema": "northwind",
+              "database": null,
+              "name": "orders",
+              "projectId": "${databricks_ai_tour}",
+              "dataAppId": "onboarding_landing-uboi"
+            }
+          ],
+          "dataEntityAttributes": null,
+          "tableDef": null,
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "id": "orders",
+          "name": "orders",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "LANDING",
+          "virtualEntity": false,
+          "inputDataEntities": [
+            {
+              "type": "TABLE",
+              "entityId": "$replicate$northwind_products",
+              "schema": "northwind",
+              "database": null,
+              "name": "products",
+              "projectId": "${databricks_ai_tour}",
+              "dataAppId": "onboarding_landing-uboi"
+            }
+          ],
+          "dataEntityAttributes": null,
+          "tableDef": null,
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "id": "products",
+          "name": "products",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "LANDING",
+          "virtualEntity": false,
+          "inputDataEntities": [
+            {
+              "type": "TABLE",
+              "entityId": "$replicate$northwind_shippers",
+              "schema": "northwind",
+              "database": null,
+              "name": "shippers",
+              "projectId": "${databricks_ai_tour}",
+              "dataAppId": "onboarding_landing-uboi"
+            }
+          ],
+          "dataEntityAttributes": null,
+          "tableDef": null,
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "id": "shippers",
+          "name": "shippers",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "LANDING",
+          "virtualEntity": false,
+          "inputDataEntities": [
+            {
+              "type": "TABLE",
+              "entityId": "$replicate$northwind_suppliers",
+              "schema": "northwind",
+              "database": null,
+              "name": "suppliers",
+              "projectId": "${databricks_ai_tour}",
+              "dataAppId": "onboarding_landing-uboi"
+            }
+          ],
+          "dataEntityAttributes": null,
+          "tableDef": null,
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "id": "suppliers",
+          "name": "suppliers",
+          "description": "",
+          "version": "1",
+          "tags": null
+        }
+      ],
+      "modelBasedMappings": {},
+      "cachedDataEntities": [
+        {
+          "type": "LANDING",
+          "virtualEntity": false,
+          "inputDataEntities": null,
+          "dataEntityAttributes": null,
+          "tableDef": {
+            "name": "categories",
+            "dbSchema": "northwind",
+            "dbName": null,
+            "columns": null,
+            "datasetId": null,
+            "dbTableId": null,
+            "entityId": null,
+            "secureQri": "",
+            "fullLoadOnly": false
+          },
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "id": "$replicate$northwind_categories",
+          "name": "northwind_categories",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "LANDING",
+          "virtualEntity": false,
+          "inputDataEntities": null,
+          "dataEntityAttributes": null,
+          "tableDef": {
+            "name": "customer_alt_contact",
+            "dbSchema": "northwind",
+            "dbName": null,
+            "columns": null,
+            "datasetId": null,
+            "dbTableId": null,
+            "entityId": null,
+            "secureQri": "",
+            "fullLoadOnly": false
+          },
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "id": "$replicate$northwind_customer_alt_contact",
+          "name": "northwind_customer_alt_contact",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "LANDING",
+          "virtualEntity": false,
+          "inputDataEntities": null,
+          "dataEntityAttributes": null,
+          "tableDef": {
+            "name": "customers",
+            "dbSchema": "northwind",
+            "dbName": null,
+            "columns": null,
+            "datasetId": null,
+            "dbTableId": null,
+            "entityId": null,
+            "secureQri": "",
+            "fullLoadOnly": false
+          },
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "id": "$replicate$northwind_customers",
+          "name": "northwind_customers",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "LANDING",
+          "virtualEntity": false,
+          "inputDataEntities": null,
+          "dataEntityAttributes": null,
+          "tableDef": {
+            "name": "employees",
+            "dbSchema": "northwind",
+            "dbName": null,
+            "columns": null,
+            "datasetId": null,
+            "dbTableId": null,
+            "entityId": null,
+            "secureQri": "",
+            "fullLoadOnly": false
+          },
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "id": "$replicate$northwind_employees",
+          "name": "northwind_employees",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "LANDING",
+          "virtualEntity": false,
+          "inputDataEntities": null,
+          "dataEntityAttributes": null,
+          "tableDef": {
+            "name": "order_details",
+            "dbSchema": "northwind",
+            "dbName": null,
+            "columns": null,
+            "datasetId": null,
+            "dbTableId": null,
+            "entityId": null,
+            "secureQri": "",
+            "fullLoadOnly": false
+          },
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "id": "$replicate$northwind_order_details",
+          "name": "northwind_order_details",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "LANDING",
+          "virtualEntity": false,
+          "inputDataEntities": null,
+          "dataEntityAttributes": null,
+          "tableDef": {
+            "name": "orders",
+            "dbSchema": "northwind",
+            "dbName": null,
+            "columns": null,
+            "datasetId": null,
+            "dbTableId": null,
+            "entityId": null,
+            "secureQri": "",
+            "fullLoadOnly": false
+          },
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "id": "$replicate$northwind_orders",
+          "name": "northwind_orders",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "LANDING",
+          "virtualEntity": false,
+          "inputDataEntities": null,
+          "dataEntityAttributes": null,
+          "tableDef": {
+            "name": "products",
+            "dbSchema": "northwind",
+            "dbName": null,
+            "columns": null,
+            "datasetId": null,
+            "dbTableId": null,
+            "entityId": null,
+            "secureQri": "",
+            "fullLoadOnly": false
+          },
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "id": "$replicate$northwind_products",
+          "name": "northwind_products",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "LANDING",
+          "virtualEntity": false,
+          "inputDataEntities": null,
+          "dataEntityAttributes": null,
+          "tableDef": {
+            "name": "shippers",
+            "dbSchema": "northwind",
+            "dbName": null,
+            "columns": null,
+            "datasetId": null,
+            "dbTableId": null,
+            "entityId": null,
+            "secureQri": "",
+            "fullLoadOnly": false
+          },
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "id": "$replicate$northwind_shippers",
+          "name": "northwind_shippers",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "LANDING",
+          "virtualEntity": false,
+          "inputDataEntities": null,
+          "dataEntityAttributes": null,
+          "tableDef": {
+            "name": "suppliers",
+            "dbSchema": "northwind",
+            "dbName": null,
+            "columns": null,
+            "datasetId": null,
+            "dbTableId": null,
+            "entityId": null,
+            "secureQri": "",
+            "fullLoadOnly": false
+          },
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "id": "$replicate$northwind_suppliers",
+          "name": "northwind_suppliers",
+          "description": "",
+          "version": "1",
+          "tags": null
+        }
+      ],
+      "rulesets": [
+        {
+          "ruleset": {
+            "globalRules": null,
+            "tableRules": [
+              "categories-59yw"
+            ],
+            "enabled": true,
+            "id": "outbound",
+            "name": "outbound",
+            "description": "",
+            "version": "1",
+            "tags": null
+          },
+          "globalRules": [],
+          "tableRules": [
+            {
+              "entityId": "categories",
+              "actionType": "LOCAL_MANIPULATION",
+              "scopeType": "COLUMN",
+              "scope": {
+                "whereOwnerName": "%",
+                "whereTableName": "categories",
+                "whereColumnName": "%",
+                "whereDatatype": "UNSPECIFIED",
+                "whereExpression": null,
+                "whereColumnKeyAttribute": "ANY",
+                "whereColumnNullability": "ANY"
+              },
+              "action": null,
+              "enabled": true,
+              "transformedTableLocal": {
+                "newTableName": null,
+                "filter": null,
+                "transformedColumnsLocal": [
+                  {
+                    "action": "KEEP",
+                    "columnName": "CategoryID",
+                    "newColumnName": "CategoryID",
+                    "newDataType": {
+                      "type": "UINT4",
+                      "length": 0,
+                      "precision": 0,
+                      "scale": 0,
+                      "originalType": null,
+                      "originalTypeFull": ""
+                    },
+                    "expression": null,
+                    "primaryKeyOrdinal": 1,
+                    "ordinal": 0,
+                    "nullable": false,
+                    "addedColumnId": null,
+                    "markAsMetadata": false
+                  }
+                ]
+              },
+              "internalRule": false,
+              "id": "categories-59yw",
+              "name": "categories",
+              "description": "",
+              "version": "1",
+              "tags": null
+            }
+          ]
+        }
+      ],
+      "entityRelationship": [],
+      "schedulings": [
+        {
+          "enabled": false,
+          "schedulingType": "TIME_BASED",
+          "timeBasedScheduling": {
+            "schedule": [
+              "RRULE:FREQ=MINUTELY;INTERVAL=5;BYSECOND=0"
+            ],
+            "startDateTime": "2024-09-06T18:10:00.000Z",
+            "endDateTime": "0001-01-01T00:00:00.000Z",
+            "timezone": "Etc/UTC"
+          },
+          "eventBasedScheduling": {
+            "eventSchedulingType": "ANY_INPUT_TASK",
+            "triggerApps": []
+          },
+          "id": "schedule-eb-x",
+          "name": "Schedule",
+          "description": "",
+          "version": "1",
+          "tags": null
+        }
+      ],
+      "dataFlows": null
+    },
+    {
+      "app": {
+        "type": "STORAGE",
+        "subType": null,
+        "id": "bronze-eb-y",
+        "name": "Bronze",
+        "description": "",
+        "version": "1",
+        "tags": null
+      },
+      "settings": {
+        "fullLoadOnly": false,
+        "landingAppSettings": null,
+        "transformAppSettings": null,
+        "storageAppSettings": {
+          "artifactsLocation": {
+            "internalSchema": "bronze__internal",
+            "dataAssetSchema": "bronze",
+            "database": "${bronze-eb-y.database}"
+          },
+          "artifactsInfo": {
+            "prefixForAllTablesAndViews": "",
+            "liveViews": {
+              "enabled": true,
+              "transactionallyConsistent": false,
+              "currentSuffix": "__live",
+              "historySuffix": "__live_history"
+            },
+            "headerColumnsPrefix": "hdr__",
+            "history": {
+              "enabled": true,
+              "historyViewsSuffix": "__history",
+              "fromDateColumnName": "hdr__from_timestamp",
+              "toDateColumnName": "hdr__to_timestamp",
+              "priorTablesSuffix": "__prior"
+            },
+            "changeTables": {
+              "enabled": true,
+              "tablesSuffix": "__ct",
+              "viewsSuffix": "__changes"
+            },
+            "standardViewsWithHeaders": {
+              "enabled": true,
+              "suffix": "__whdr"
+            },
+            "current": {
+              "standardViewsSuffix": "",
+              "currentTablesSuffix": "__current"
+            },
+            "materialized": true,
+            "reloadType": "COMPARE_AND_APPLY_WITH_DELETED_ROWS"
+          },
+          "dataAppRuntime": {
+            "tableUpdateInterval": 15,
+            "tableUpdateConcurrency": 10,
+            "maxNumberOfRecords": 0,
+            "workloadExecutionEngine": {
+              "engineType": "DEFAULT",
+              "name": ""
+            }
+          },
+          "catalogSettings": {
+            "publish": false,
+            "tags": []
+          }
+        },
+        "datamartAppSettings": null,
+        "qvdStorageAppSettings": null,
+        "registeredAppSettings": null,
+        "replicationAppSettings": null,
+        "consolidationAppSettings": null,
+        "publishingAppSettings": null,
+        "distributionAppSettings": null,
+        "lakeLandingAppSettings": null,
+        "docPublishAppSettings": null,
+        "filePublishAppSettings": null,
+        "fileLandingAppSettings": null,
+        "isDummySettings": null
+      },
+      "sourceSelection": {
+        "dataEntitiesSelection": {
+          "sourceConnectionId": null,
+          "includePatterns": [
+            {
+              "tablePattern": "%",
+              "schemaPattern": "%",
+              "database": null,
+              "entityType": "TABLE",
+              "projectId": "${databricks_ai_tour}",
+              "dataAppId": "onboarding_landing-uboi"
+            }
+          ],
+          "excludePatterns": null,
+          "dataEntities": null
+        }
+      },
+      "dataEntities": [
+        {
+          "type": "STORAGE",
+          "virtualEntity": false,
+          "inputDataEntities": [
+            {
+              "type": "NONE",
+              "entityId": "categories",
+              "schema": null,
+              "database": null,
+              "name": "categories",
+              "projectId": "${databricks_ai_tour}",
+              "dataAppId": "onboarding_landing-uboi"
+            }
+          ],
+          "dataEntityAttributes": {
+            "materialized": "INHERIT",
+            "hasHistory": "INHERIT",
+            "hasLiveViews": "INHERIT",
+            "hasChanges": "INHERIT",
+            "hasStandardViewsWithHeaders": "INHERIT",
+            "watermarkIncrementalSettings": "INHERIT"
+          },
+          "tableDef": null,
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "id": "categories-59yy",
+          "name": "categories",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "STORAGE",
+          "virtualEntity": false,
+          "inputDataEntities": [
+            {
+              "type": "NONE",
+              "entityId": "customer_alt_contact",
+              "schema": null,
+              "database": null,
+              "name": "customer_alt_contact",
+              "projectId": "${databricks_ai_tour}",
+              "dataAppId": "onboarding_landing-uboi"
+            }
+          ],
+          "dataEntityAttributes": {
+            "materialized": "INHERIT",
+            "hasHistory": "INHERIT",
+            "hasLiveViews": "INHERIT",
+            "hasChanges": "INHERIT",
+            "hasStandardViewsWithHeaders": "INHERIT",
+            "watermarkIncrementalSettings": "INHERIT"
+          },
+          "tableDef": null,
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "id": "customer_alt_contact-59yz",
+          "name": "customer_alt_contact",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "STORAGE",
+          "virtualEntity": false,
+          "inputDataEntities": [
+            {
+              "type": "NONE",
+              "entityId": "customers",
+              "schema": null,
+              "database": null,
+              "name": "customers",
+              "projectId": "${databricks_ai_tour}",
+              "dataAppId": "onboarding_landing-uboi"
+            }
+          ],
+          "dataEntityAttributes": {
+            "materialized": "INHERIT",
+            "hasHistory": "INHERIT",
+            "hasLiveViews": "INHERIT",
+            "hasChanges": "INHERIT",
+            "hasStandardViewsWithHeaders": "INHERIT",
+            "watermarkIncrementalSettings": "INHERIT"
+          },
+          "tableDef": null,
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "id": "customers-59y0",
+          "name": "customers",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "STORAGE",
+          "virtualEntity": false,
+          "inputDataEntities": [
+            {
+              "type": "NONE",
+              "entityId": "employees",
+              "schema": null,
+              "database": null,
+              "name": "employees",
+              "projectId": "${databricks_ai_tour}",
+              "dataAppId": "onboarding_landing-uboi"
+            }
+          ],
+          "dataEntityAttributes": {
+            "materialized": "INHERIT",
+            "hasHistory": "INHERIT",
+            "hasLiveViews": "INHERIT",
+            "hasChanges": "INHERIT",
+            "hasStandardViewsWithHeaders": "INHERIT",
+            "watermarkIncrementalSettings": "INHERIT"
+          },
+          "tableDef": null,
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "id": "employees-59y1",
+          "name": "employees",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "STORAGE",
+          "virtualEntity": false,
+          "inputDataEntities": [
+            {
+              "type": "NONE",
+              "entityId": "order_details",
+              "schema": null,
+              "database": null,
+              "name": "order_details",
+              "projectId": "${databricks_ai_tour}",
+              "dataAppId": "onboarding_landing-uboi"
+            }
+          ],
+          "dataEntityAttributes": {
+            "materialized": "INHERIT",
+            "hasHistory": "INHERIT",
+            "hasLiveViews": "INHERIT",
+            "hasChanges": "INHERIT",
+            "hasStandardViewsWithHeaders": "INHERIT",
+            "watermarkIncrementalSettings": "INHERIT"
+          },
+          "tableDef": null,
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "id": "order_details-59y2",
+          "name": "order_details",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "STORAGE",
+          "virtualEntity": false,
+          "inputDataEntities": [
+            {
+              "type": "NONE",
+              "entityId": "orders",
+              "schema": null,
+              "database": null,
+              "name": "orders",
+              "projectId": "${databricks_ai_tour}",
+              "dataAppId": "onboarding_landing-uboi"
+            }
+          ],
+          "dataEntityAttributes": {
+            "materialized": "INHERIT",
+            "hasHistory": "INHERIT",
+            "hasLiveViews": "INHERIT",
+            "hasChanges": "INHERIT",
+            "hasStandardViewsWithHeaders": "INHERIT",
+            "watermarkIncrementalSettings": "INHERIT"
+          },
+          "tableDef": null,
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "id": "orders-59y3",
+          "name": "orders",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "STORAGE",
+          "virtualEntity": false,
+          "inputDataEntities": [
+            {
+              "type": "NONE",
+              "entityId": "products",
+              "schema": null,
+              "database": null,
+              "name": "products",
+              "projectId": "${databricks_ai_tour}",
+              "dataAppId": "onboarding_landing-uboi"
+            }
+          ],
+          "dataEntityAttributes": {
+            "materialized": "INHERIT",
+            "hasHistory": "INHERIT",
+            "hasLiveViews": "INHERIT",
+            "hasChanges": "INHERIT",
+            "hasStandardViewsWithHeaders": "INHERIT",
+            "watermarkIncrementalSettings": "INHERIT"
+          },
+          "tableDef": null,
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "id": "products-59y4",
+          "name": "products",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "STORAGE",
+          "virtualEntity": false,
+          "inputDataEntities": [
+            {
+              "type": "NONE",
+              "entityId": "shippers",
+              "schema": null,
+              "database": null,
+              "name": "shippers",
+              "projectId": "${databricks_ai_tour}",
+              "dataAppId": "onboarding_landing-uboi"
+            }
+          ],
+          "dataEntityAttributes": {
+            "materialized": "INHERIT",
+            "hasHistory": "INHERIT",
+            "hasLiveViews": "INHERIT",
+            "hasChanges": "INHERIT",
+            "hasStandardViewsWithHeaders": "INHERIT",
+            "watermarkIncrementalSettings": "INHERIT"
+          },
+          "tableDef": null,
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "id": "shippers-59y5",
+          "name": "shippers",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "STORAGE",
+          "virtualEntity": false,
+          "inputDataEntities": [
+            {
+              "type": "NONE",
+              "entityId": "suppliers",
+              "schema": null,
+              "database": null,
+              "name": "suppliers",
+              "projectId": "${databricks_ai_tour}",
+              "dataAppId": "onboarding_landing-uboi"
+            }
+          ],
+          "dataEntityAttributes": {
+            "materialized": "INHERIT",
+            "hasHistory": "INHERIT",
+            "hasLiveViews": "INHERIT",
+            "hasChanges": "INHERIT",
+            "hasStandardViewsWithHeaders": "INHERIT",
+            "watermarkIncrementalSettings": "INHERIT"
+          },
+          "tableDef": null,
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "id": "suppliers-59y6",
+          "name": "suppliers",
+          "description": "",
+          "version": "1",
+          "tags": null
+        }
+      ],
+      "modelBasedMappings": {},
+      "cachedDataEntities": [],
+      "rulesets": [],
+      "entityRelationship": [],
+      "schedulings": [],
+      "dataFlows": null
+    },
+    {
+      "app": {
+        "type": "TRANSFORM",
+        "subType": null,
+        "id": "silver-b4xn",
+        "name": "Silver",
+        "description": "",
+        "version": "1",
+        "tags": null
+      },
+      "settings": {
+        "fullLoadOnly": false,
+        "landingAppSettings": null,
+        "transformAppSettings": {
+          "artifactsLocation": {
+            "internalSchema": "silver__internal",
+            "dataAssetSchema": "silver",
+            "database": "${silver-b4xn.database}"
+          },
+          "artifactsInfo": {
+            "prefixForAllTablesAndViews": "",
+            "liveViews": {
+              "enabled": false,
+              "transactionallyConsistent": false,
+              "currentSuffix": "__live",
+              "historySuffix": "__live_history"
+            },
+            "headerColumnsPrefix": "hdr__",
+            "history": {
+              "enabled": true,
+              "historyViewsSuffix": "__history",
+              "fromDateColumnName": "hdr__from_timestamp",
+              "toDateColumnName": "hdr__to_timestamp",
+              "priorTablesSuffix": "__prior"
+            },
+            "changeTables": {
+              "enabled": true,
+              "tablesSuffix": "__ct",
+              "viewsSuffix": "__changes"
+            },
+            "standardViewsWithHeaders": {
+              "enabled": true,
+              "suffix": "__whdr"
+            },
+            "current": {
+              "standardViewsSuffix": "",
+              "currentTablesSuffix": "__current"
+            },
+            "materialized": false,
+            "reloadType": "COMPARE_AND_APPLY_WITH_DELETED_ROWS"
+          },
+          "dataAppRuntime": {
+            "tableUpdateInterval": 15,
+            "tableUpdateConcurrency": 10,
+            "maxNumberOfRecords": 0,
+            "workloadExecutionEngine": {
+              "engineType": "DEFAULT",
+              "name": ""
+            }
+          },
+          "catalogSettings": {
+            "publish": false,
+            "tags": []
+          }
+        },
+        "storageAppSettings": null,
+        "datamartAppSettings": null,
+        "qvdStorageAppSettings": null,
+        "registeredAppSettings": null,
+        "replicationAppSettings": null,
+        "consolidationAppSettings": null,
+        "publishingAppSettings": null,
+        "distributionAppSettings": null,
+        "lakeLandingAppSettings": null,
+        "docPublishAppSettings": null,
+        "filePublishAppSettings": null,
+        "fileLandingAppSettings": null,
+        "isDummySettings": null
+      },
+      "sourceSelection": {
+        "dataEntitiesSelection": {
+          "sourceConnectionId": null,
+          "includePatterns": [
+            {
+              "tablePattern": "%",
+              "schemaPattern": "%",
+              "database": null,
+              "entityType": "TABLE",
+              "projectId": "${databricks_ai_tour}",
+              "dataAppId": "bronze-eb-y"
+            }
+          ],
+          "excludePatterns": null,
+          "dataEntities": null
+        }
+      },
+      "dataEntities": [
+        {
+          "type": "TRANSFORM_MODEL_BASED",
+          "virtualEntity": false,
+          "inputDataEntities": [
+            {
+              "type": "NONE",
+              "entityId": "categories-59yy",
+              "schema": null,
+              "database": null,
+              "name": "categories",
+              "projectId": "${databricks_ai_tour}",
+              "dataAppId": "bronze-eb-y"
+            }
+          ],
+          "dataEntityAttributes": {
+            "materialized": "INHERIT",
+            "hasHistory": "INHERIT",
+            "hasLiveViews": "OFF",
+            "hasChanges": "INHERIT",
+            "hasStandardViewsWithHeaders": "INHERIT",
+            "watermarkIncrementalSettings": "INHERIT"
+          },
+          "tableDef": {
+            "name": "categories",
+            "dbSchema": null,
+            "dbName": null,
+            "columns": [
+              {
+                "name": "CategoryID",
+                "ordinal": 1,
+                "nullable": false,
+                "primaryKeyOrdinal": 1,
+                "datatype": {
+                  "type": "UINT4",
+                  "length": 0,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": null,
+                  "originalTypeFull": "INT"
+                },
+                "expression": null,
+                "id": "categoryid",
+                "flags": "NONE"
+              },
+              {
+                "name": "CategoryName",
+                "ordinal": 2,
+                "nullable": true,
+                "primaryKeyOrdinal": 0,
+                "datatype": {
+                  "type": "WSTRING",
+                  "length": 50,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": null,
+                  "originalTypeFull": "VARCHAR(50)"
+                },
+                "expression": null,
+                "id": "categoryname",
+                "flags": "NONE"
+              },
+              {
+                "name": "Description",
+                "ordinal": 3,
+                "nullable": true,
+                "primaryKeyOrdinal": 0,
+                "datatype": {
+                  "type": "WSTRING",
+                  "length": 255,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": null,
+                  "originalTypeFull": "VARCHAR(255)"
+                },
+                "expression": null,
+                "id": "description",
+                "flags": "NONE"
+              }
+            ],
+            "datasetId": null,
+            "dbTableId": null,
+            "entityId": null,
+            "secureQri": "",
+            "fullLoadOnly": false
+          },
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "id": "categories-59y7",
+          "name": "categories",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "TRANSFORM_MODEL_BASED",
+          "virtualEntity": false,
+          "inputDataEntities": [
+            {
+              "type": "NONE",
+              "entityId": "customer_alt_contact-59yz",
+              "schema": null,
+              "database": null,
+              "name": "customer_alt_contact",
+              "projectId": "${databricks_ai_tour}",
+              "dataAppId": "bronze-eb-y"
+            }
+          ],
+          "dataEntityAttributes": {
+            "materialized": "INHERIT",
+            "hasHistory": "INHERIT",
+            "hasLiveViews": "OFF",
+            "hasChanges": "INHERIT",
+            "hasStandardViewsWithHeaders": "INHERIT",
+            "watermarkIncrementalSettings": "INHERIT"
+          },
+          "tableDef": {
+            "name": "customer_alt_contact",
+            "dbSchema": null,
+            "dbName": null,
+            "columns": [
+              {
+                "name": "CustomerID",
+                "ordinal": 1,
+                "nullable": false,
+                "primaryKeyOrdinal": 1,
+                "datatype": {
+                  "type": "WSTRING",
+                  "length": 5,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": null,
+                  "originalTypeFull": "VARCHAR(5)"
+                },
+                "expression": null,
+                "id": "customerid",
+                "flags": "NONE"
+              },
+              {
+                "name": "AlternateContactType",
+                "ordinal": 2,
+                "nullable": false,
+                "primaryKeyOrdinal": 2,
+                "datatype": {
+                  "type": "WSTRING",
+                  "length": 10,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": null,
+                  "originalTypeFull": "VARCHAR(10)"
+                },
+                "expression": null,
+                "id": "alternatecontacttype",
+                "flags": "NONE"
+              },
+              {
+                "name": "ContactValue",
+                "ordinal": 3,
+                "nullable": true,
+                "primaryKeyOrdinal": 0,
+                "datatype": {
+                  "type": "WSTRING",
+                  "length": 100,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": null,
+                  "originalTypeFull": "VARCHAR(100)"
+                },
+                "expression": null,
+                "id": "contactvalue",
+                "flags": "NONE"
+              }
+            ],
+            "datasetId": null,
+            "dbTableId": null,
+            "entityId": null,
+            "secureQri": "",
+            "fullLoadOnly": false
+          },
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "id": "customer_alt_contact-ubox",
+          "name": "customer_alt_contact",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "TRANSFORM_MODEL_BASED",
+          "virtualEntity": false,
+          "inputDataEntities": [
+            {
+              "type": "NONE",
+              "entityId": "employees-59y1",
+              "schema": null,
+              "database": null,
+              "name": "employees",
+              "projectId": "${databricks_ai_tour}",
+              "dataAppId": "bronze-eb-y"
+            }
+          ],
+          "dataEntityAttributes": {
+            "materialized": "INHERIT",
+            "hasHistory": "INHERIT",
+            "hasLiveViews": "OFF",
+            "hasChanges": "INHERIT",
+            "hasStandardViewsWithHeaders": "INHERIT",
+            "watermarkIncrementalSettings": "INHERIT"
+          },
+          "tableDef": {
+            "name": "employees",
+            "dbSchema": null,
+            "dbName": null,
+            "columns": [
+              {
+                "name": "EmployeeID",
+                "ordinal": 1,
+                "nullable": false,
+                "primaryKeyOrdinal": 1,
+                "datatype": {
+                  "type": "UINT4",
+                  "length": 0,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": null,
+                  "originalTypeFull": "INT"
+                },
+                "expression": null,
+                "id": "employeeid",
+                "flags": "NONE"
+              },
+              {
+                "name": "LastName",
+                "ordinal": 2,
+                "nullable": true,
+                "primaryKeyOrdinal": 0,
+                "datatype": {
+                  "type": "WSTRING",
+                  "length": 50,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": null,
+                  "originalTypeFull": "VARCHAR(50)"
+                },
+                "expression": null,
+                "id": "lastname",
+                "flags": "NONE"
+              },
+              {
+                "name": "FirstName",
+                "ordinal": 3,
+                "nullable": true,
+                "primaryKeyOrdinal": 0,
+                "datatype": {
+                  "type": "WSTRING",
+                  "length": 10,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": null,
+                  "originalTypeFull": "VARCHAR(10)"
+                },
+                "expression": null,
+                "id": "firstname",
+                "flags": "NONE"
+              },
+              {
+                "name": "Title",
+                "ordinal": 4,
+                "nullable": true,
+                "primaryKeyOrdinal": 0,
+                "datatype": {
+                  "type": "WSTRING",
+                  "length": 30,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": null,
+                  "originalTypeFull": "VARCHAR(30)"
+                },
+                "expression": null,
+                "id": "title",
+                "flags": "NONE"
+              },
+              {
+                "name": "TitleOfCourtesy",
+                "ordinal": 5,
+                "nullable": true,
+                "primaryKeyOrdinal": 0,
+                "datatype": {
+                  "type": "WSTRING",
+                  "length": 50,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": null,
+                  "originalTypeFull": "VARCHAR(50)"
+                },
+                "expression": null,
+                "id": "titleofcourtesy",
+                "flags": "NONE"
+              },
+              {
+                "name": "BirthDate",
+                "ordinal": 6,
+                "nullable": true,
+                "primaryKeyOrdinal": 0,
+                "datatype": {
+                  "type": "DATE",
+                  "length": 0,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": null,
+                  "originalTypeFull": "DATE"
+                },
+                "expression": null,
+                "id": "birthdate",
+                "flags": "NONE"
+              },
+              {
+                "name": "HireDate",
+                "ordinal": 7,
+                "nullable": true,
+                "primaryKeyOrdinal": 0,
+                "datatype": {
+                  "type": "DATE",
+                  "length": 0,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": null,
+                  "originalTypeFull": "DATE"
+                },
+                "expression": null,
+                "id": "hiredate",
+                "flags": "NONE"
+              },
+              {
+                "name": "Address",
+                "ordinal": 8,
+                "nullable": true,
+                "primaryKeyOrdinal": 0,
+                "datatype": {
+                  "type": "WSTRING",
+                  "length": 50,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": null,
+                  "originalTypeFull": "VARCHAR(50)"
+                },
+                "expression": null,
+                "id": "address",
+                "flags": "NONE"
+              },
+              {
+                "name": "City",
+                "ordinal": 9,
+                "nullable": true,
+                "primaryKeyOrdinal": 0,
+                "datatype": {
+                  "type": "WSTRING",
+                  "length": 15,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": null,
+                  "originalTypeFull": "VARCHAR(15)"
+                },
+                "expression": null,
+                "id": "city",
+                "flags": "NONE"
+              },
+              {
+                "name": "Region",
+                "ordinal": 10,
+                "nullable": true,
+                "primaryKeyOrdinal": 0,
+                "datatype": {
+                  "type": "WSTRING",
+                  "length": 15,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": null,
+                  "originalTypeFull": "VARCHAR(15)"
+                },
+                "expression": null,
+                "id": "region",
+                "flags": "NONE"
+              },
+              {
+                "name": "PostalCode",
+                "ordinal": 11,
+                "nullable": true,
+                "primaryKeyOrdinal": 0,
+                "datatype": {
+                  "type": "WSTRING",
+                  "length": 10,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": null,
+                  "originalTypeFull": "VARCHAR(10)"
+                },
+                "expression": null,
+                "id": "postalcode",
+                "flags": "NONE"
+              },
+              {
+                "name": "Country",
+                "ordinal": 12,
+                "nullable": true,
+                "primaryKeyOrdinal": 0,
+                "datatype": {
+                  "type": "WSTRING",
+                  "length": 15,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": null,
+                  "originalTypeFull": "VARCHAR(15)"
+                },
+                "expression": null,
+                "id": "country",
+                "flags": "NONE"
+              },
+              {
+                "name": "HomePhone",
+                "ordinal": 13,
+                "nullable": true,
+                "primaryKeyOrdinal": 0,
+                "datatype": {
+                  "type": "WSTRING",
+                  "length": 24,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": null,
+                  "originalTypeFull": "VARCHAR(24)"
+                },
+                "expression": null,
+                "id": "homephone",
+                "flags": "NONE"
+              },
+              {
+                "name": "Extension",
+                "ordinal": 14,
+                "nullable": true,
+                "primaryKeyOrdinal": 0,
+                "datatype": {
+                  "type": "WSTRING",
+                  "length": 4,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": null,
+                  "originalTypeFull": "VARCHAR(4)"
+                },
+                "expression": null,
+                "id": "extension",
+                "flags": "NONE"
+              },
+              {
+                "name": "Photo",
+                "ordinal": 15,
+                "nullable": true,
+                "primaryKeyOrdinal": 0,
+                "datatype": {
+                  "type": "WSTRING",
+                  "length": 40,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": null,
+                  "originalTypeFull": "VARCHAR(40)"
+                },
+                "expression": null,
+                "id": "photo",
+                "flags": "NONE"
+              },
+              {
+                "name": "Notes",
+                "ordinal": 16,
+                "nullable": true,
+                "primaryKeyOrdinal": 0,
+                "datatype": {
+                  "type": "WSTRING",
+                  "length": 65535,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": null,
+                  "originalTypeFull": "VARCHAR(65535)"
+                },
+                "expression": null,
+                "id": "notes",
+                "flags": "NONE"
+              },
+              {
+                "name": "ReportsTo",
+                "ordinal": 17,
+                "nullable": true,
+                "primaryKeyOrdinal": 0,
+                "datatype": {
+                  "type": "UINT4",
+                  "length": 0,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": null,
+                  "originalTypeFull": "INT"
+                },
+                "expression": null,
+                "id": "reportsto",
+                "flags": "NONE"
+              }
+            ],
+            "datasetId": null,
+            "dbTableId": null,
+            "entityId": null,
+            "secureQri": "",
+            "fullLoadOnly": false
+          },
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "id": "employees-vg41",
+          "name": "employees",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "TRANSFORM_MODEL_BASED",
+          "virtualEntity": false,
+          "inputDataEntities": [
+            {
+              "type": "NONE",
+              "entityId": "order_details-59y2",
+              "schema": null,
+              "database": null,
+              "name": "order_details",
+              "projectId": "${databricks_ai_tour}",
+              "dataAppId": "bronze-eb-y"
+            }
+          ],
+          "dataEntityAttributes": {
+            "materialized": "INHERIT",
+            "hasHistory": "INHERIT",
+            "hasLiveViews": "OFF",
+            "hasChanges": "INHERIT",
+            "hasStandardViewsWithHeaders": "INHERIT",
+            "watermarkIncrementalSettings": "INHERIT"
+          },
+          "tableDef": {
+            "name": "order_details",
+            "dbSchema": null,
+            "dbName": null,
+            "columns": [
+              {
+                "name": "odID",
+                "ordinal": 1,
+                "nullable": false,
+                "primaryKeyOrdinal": 1,
+                "datatype": {
+                  "type": "UINT4",
+                  "length": 0,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": null,
+                  "originalTypeFull": "INT"
+                },
+                "expression": null,
+                "id": "odid",
+                "flags": "NONE"
+              },
+              {
+                "name": "OrderID",
+                "ordinal": 2,
+                "nullable": false,
+                "primaryKeyOrdinal": 0,
+                "datatype": {
+                  "type": "UINT4",
+                  "length": 0,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": null,
+                  "originalTypeFull": "INT"
+                },
+                "expression": null,
+                "id": "orderid",
+                "flags": "NONE"
+              },
+              {
+                "name": "ProductID",
+                "ordinal": 3,
+                "nullable": false,
+                "primaryKeyOrdinal": 0,
+                "datatype": {
+                  "type": "UINT4",
+                  "length": 0,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": null,
+                  "originalTypeFull": "INT"
+                },
+                "expression": null,
+                "id": "productid",
+                "flags": "NONE"
+              },
+              {
+                "name": "UnitPrice",
+                "ordinal": 4,
+                "nullable": true,
+                "primaryKeyOrdinal": 0,
+                "datatype": {
+                  "type": "REAL4",
+                  "length": 0,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": null,
+                  "originalTypeFull": "FLOAT"
+                },
+                "expression": null,
+                "id": "unitprice",
+                "flags": "NONE"
+              },
+              {
+                "name": "Quantity",
+                "ordinal": 5,
+                "nullable": true,
+                "primaryKeyOrdinal": 0,
+                "datatype": {
+                  "type": "INT2",
+                  "length": 0,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": null,
+                  "originalTypeFull": "SMALLINT"
+                },
+                "expression": null,
+                "id": "quantity",
+                "flags": "NONE"
+              },
+              {
+                "name": "Discount",
+                "ordinal": 6,
+                "nullable": true,
+                "primaryKeyOrdinal": 0,
+                "datatype": {
+                  "type": "REAL4",
+                  "length": 0,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": null,
+                  "originalTypeFull": "FLOAT"
+                },
+                "expression": null,
+                "id": "discount",
+                "flags": "NONE"
+              },
+              {
+                "name": "Category",
+                "ordinal": 7,
+                "nullable": true,
+                "primaryKeyOrdinal": 0,
+                "datatype": {
+                  "type": "INT4",
+                  "length": 0,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": null,
+                  "originalTypeFull": "INT"
+                },
+                "expression": null,
+                "id": "category",
+                "flags": "NONE"
+              }
+            ],
+            "datasetId": null,
+            "dbTableId": null,
+            "entityId": null,
+            "secureQri": "",
+            "fullLoadOnly": false
+          },
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "id": "order_details-eb-z",
+          "name": "order_details",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "TRANSFORM_MODEL_BASED",
+          "virtualEntity": false,
+          "inputDataEntities": [
+            {
+              "type": "NONE",
+              "entityId": "orders-59y3",
+              "schema": null,
+              "database": null,
+              "name": "orders",
+              "projectId": "${databricks_ai_tour}",
+              "dataAppId": "bronze-eb-y"
+            }
+          ],
+          "dataEntityAttributes": {
+            "materialized": "INHERIT",
+            "hasHistory": "INHERIT",
+            "hasLiveViews": "OFF",
+            "hasChanges": "INHERIT",
+            "hasStandardViewsWithHeaders": "INHERIT",
+            "watermarkIncrementalSettings": "INHERIT"
+          },
+          "tableDef": {
+            "name": "orders",
+            "dbSchema": null,
+            "dbName": null,
+            "columns": [
+              {
+                "name": "OrderID",
+                "ordinal": 1,
+                "nullable": false,
+                "primaryKeyOrdinal": 1,
+                "datatype": {
+                  "type": "UINT4",
+                  "length": 0,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": null,
+                  "originalTypeFull": "INT"
+                },
+                "expression": null,
+                "id": "orderid",
+                "flags": "NONE"
+              },
+              {
+                "name": "CustomerID",
+                "ordinal": 2,
+                "nullable": true,
+                "primaryKeyOrdinal": 0,
+                "datatype": {
+                  "type": "WSTRING",
+                  "length": 5,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": null,
+                  "originalTypeFull": "VARCHAR(5)"
+                },
+                "expression": null,
+                "id": "customerid",
+                "flags": "NONE"
+              },
+              {
+                "name": "EmployeeID",
+                "ordinal": 3,
+                "nullable": false,
+                "primaryKeyOrdinal": 0,
+                "datatype": {
+                  "type": "UINT4",
+                  "length": 0,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": null,
+                  "originalTypeFull": "INT"
+                },
+                "expression": null,
+                "id": "employeeid",
+                "flags": "NONE"
+              },
+              {
+                "name": "OrderDate",
+                "ordinal": 4,
+                "nullable": true,
+                "primaryKeyOrdinal": 0,
+                "datatype": {
+                  "type": "DATE",
+                  "length": 0,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": null,
+                  "originalTypeFull": "DATE"
+                },
+                "expression": null,
+                "id": "orderdate",
+                "flags": "NONE"
+              },
+              {
+                "name": "RequiredDate",
+                "ordinal": 5,
+                "nullable": true,
+                "primaryKeyOrdinal": 0,
+                "datatype": {
+                  "type": "DATE",
+                  "length": 0,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": null,
+                  "originalTypeFull": "DATE"
+                },
+                "expression": null,
+                "id": "requireddate",
+                "flags": "NONE"
+              },
+              {
+                "name": "ShippedDate",
+                "ordinal": 6,
+                "nullable": true,
+                "primaryKeyOrdinal": 0,
+                "datatype": {
+                  "type": "DATE",
+                  "length": 0,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": null,
+                  "originalTypeFull": "DATE"
+                },
+                "expression": null,
+                "id": "shippeddate",
+                "flags": "NONE"
+              },
+              {
+                "name": "ShipVia",
+                "ordinal": 7,
+                "nullable": false,
+                "primaryKeyOrdinal": 0,
+                "datatype": {
+                  "type": "UINT4",
+                  "length": 0,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": null,
+                  "originalTypeFull": "INT"
+                },
+                "expression": null,
+                "id": "shipvia",
+                "flags": "NONE"
+              },
+              {
+                "name": "Freight",
+                "ordinal": 8,
+                "nullable": true,
+                "primaryKeyOrdinal": 0,
+                "datatype": {
+                  "type": "REAL4",
+                  "length": 0,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": null,
+                  "originalTypeFull": "FLOAT"
+                },
+                "expression": null,
+                "id": "freight",
+                "flags": "NONE"
+              },
+              {
+                "name": "ShipName",
+                "ordinal": 9,
+                "nullable": false,
+                "primaryKeyOrdinal": 0,
+                "datatype": {
+                  "type": "WSTRING",
+                  "length": 40,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": null,
+                  "originalTypeFull": "VARCHAR(40)"
+                },
+                "expression": null,
+                "id": "shipname",
+                "flags": "NONE"
+              },
+              {
+                "name": "ShipAddress",
+                "ordinal": 10,
+                "nullable": false,
+                "primaryKeyOrdinal": 0,
+                "datatype": {
+                  "type": "WSTRING",
+                  "length": 60,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": null,
+                  "originalTypeFull": "VARCHAR(60)"
+                },
+                "expression": null,
+                "id": "shipaddress",
+                "flags": "NONE"
+              },
+              {
+                "name": "ShipCity",
+                "ordinal": 11,
+                "nullable": false,
+                "primaryKeyOrdinal": 0,
+                "datatype": {
+                  "type": "WSTRING",
+                  "length": 15,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": null,
+                  "originalTypeFull": "VARCHAR(15)"
+                },
+                "expression": null,
+                "id": "shipcity",
+                "flags": "NONE"
+              },
+              {
+                "name": "ShipRegion",
+                "ordinal": 12,
+                "nullable": false,
+                "primaryKeyOrdinal": 0,
+                "datatype": {
+                  "type": "WSTRING",
+                  "length": 15,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": null,
+                  "originalTypeFull": "VARCHAR(15)"
+                },
+                "expression": null,
+                "id": "shipregion",
+                "flags": "NONE"
+              },
+              {
+                "name": "ShipPostalCode",
+                "ordinal": 13,
+                "nullable": false,
+                "primaryKeyOrdinal": 0,
+                "datatype": {
+                  "type": "WSTRING",
+                  "length": 10,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": null,
+                  "originalTypeFull": "VARCHAR(10)"
+                },
+                "expression": null,
+                "id": "shippostalcode",
+                "flags": "NONE"
+              },
+              {
+                "name": "ShipCountry",
+                "ordinal": 14,
+                "nullable": false,
+                "primaryKeyOrdinal": 0,
+                "datatype": {
+                  "type": "WSTRING",
+                  "length": 15,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": null,
+                  "originalTypeFull": "VARCHAR(15)"
+                },
+                "expression": null,
+                "id": "shipcountry",
+                "flags": "NONE"
+              }
+            ],
+            "datasetId": null,
+            "dbTableId": null,
+            "entityId": null,
+            "secureQri": "",
+            "fullLoadOnly": false
+          },
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "id": "orders-jzkb",
+          "name": "orders",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "TRANSFORM_MODEL_BASED",
+          "virtualEntity": false,
+          "inputDataEntities": [
+            {
+              "type": "NONE",
+              "entityId": "products-59y4",
+              "schema": null,
+              "database": null,
+              "name": "products",
+              "projectId": "${databricks_ai_tour}",
+              "dataAppId": "bronze-eb-y"
+            }
+          ],
+          "dataEntityAttributes": {
+            "materialized": "INHERIT",
+            "hasHistory": "INHERIT",
+            "hasLiveViews": "OFF",
+            "hasChanges": "INHERIT",
+            "hasStandardViewsWithHeaders": "INHERIT",
+            "watermarkIncrementalSettings": "INHERIT"
+          },
+          "tableDef": {
+            "name": "products",
+            "dbSchema": null,
+            "dbName": null,
+            "columns": [
+              {
+                "name": "ProductID",
+                "ordinal": 1,
+                "nullable": false,
+                "primaryKeyOrdinal": 1,
+                "datatype": {
+                  "type": "UINT4",
+                  "length": 0,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": null,
+                  "originalTypeFull": "INT"
+                },
+                "expression": null,
+                "id": "productid",
+                "flags": "NONE"
+              },
+              {
+                "name": "ProductName",
+                "ordinal": 2,
+                "nullable": true,
+                "primaryKeyOrdinal": 0,
+                "datatype": {
+                  "type": "WSTRING",
+                  "length": 50,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": null,
+                  "originalTypeFull": "VARCHAR(50)"
+                },
+                "expression": null,
+                "id": "productname",
+                "flags": "NONE"
+              },
+              {
+                "name": "SupplierID",
+                "ordinal": 3,
+                "nullable": false,
+                "primaryKeyOrdinal": 0,
+                "datatype": {
+                  "type": "UINT4",
+                  "length": 0,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": null,
+                  "originalTypeFull": "INT"
+                },
+                "expression": null,
+                "id": "supplierid",
+                "flags": "NONE"
+              },
+              {
+                "name": "CategoryID",
+                "ordinal": 4,
+                "nullable": false,
+                "primaryKeyOrdinal": 0,
+                "datatype": {
+                  "type": "UINT1",
+                  "length": 0,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": null,
+                  "originalTypeFull": "TINYINT"
+                },
+                "expression": null,
+                "id": "categoryid",
+                "flags": "NONE"
+              },
+              {
+                "name": "QuantityPerUnit",
+                "ordinal": 5,
+                "nullable": true,
+                "primaryKeyOrdinal": 0,
+                "datatype": {
+                  "type": "WSTRING",
+                  "length": 50,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": null,
+                  "originalTypeFull": "VARCHAR(50)"
+                },
+                "expression": null,
+                "id": "quantityperunit",
+                "flags": "NONE"
+              },
+              {
+                "name": "UnitPrice",
+                "ordinal": 6,
+                "nullable": true,
+                "primaryKeyOrdinal": 0,
+                "datatype": {
+                  "type": "REAL4",
+                  "length": 0,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": null,
+                  "originalTypeFull": "FLOAT"
+                },
+                "expression": null,
+                "id": "unitprice",
+                "flags": "NONE"
+              },
+              {
+                "name": "UnitsInStock",
+                "ordinal": 7,
+                "nullable": true,
+                "primaryKeyOrdinal": 0,
+                "datatype": {
+                  "type": "INT2",
+                  "length": 0,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": null,
+                  "originalTypeFull": "SMALLINT"
+                },
+                "expression": null,
+                "id": "unitsinstock",
+                "flags": "NONE"
+              },
+              {
+                "name": "UnitsOnOrder",
+                "ordinal": 8,
+                "nullable": true,
+                "primaryKeyOrdinal": 0,
+                "datatype": {
+                  "type": "INT2",
+                  "length": 0,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": null,
+                  "originalTypeFull": "SMALLINT"
+                },
+                "expression": null,
+                "id": "unitsonorder",
+                "flags": "NONE"
+              },
+              {
+                "name": "ReorderLevel",
+                "ordinal": 9,
+                "nullable": true,
+                "primaryKeyOrdinal": 0,
+                "datatype": {
+                  "type": "INT2",
+                  "length": 0,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": null,
+                  "originalTypeFull": "SMALLINT"
+                },
+                "expression": null,
+                "id": "reorderlevel",
+                "flags": "NONE"
+              },
+              {
+                "name": "Discontinued",
+                "ordinal": 10,
+                "nullable": true,
+                "primaryKeyOrdinal": 0,
+                "datatype": {
+                  "type": "INT1",
+                  "length": 0,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": null,
+                  "originalTypeFull": "TINYINT"
+                },
+                "expression": null,
+                "id": "discontinued",
+                "flags": "NONE"
+              }
+            ],
+            "datasetId": null,
+            "dbTableId": null,
+            "entityId": null,
+            "secureQri": "",
+            "fullLoadOnly": false
+          },
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "id": "products-59y9",
+          "name": "products",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "TRANSFORM_MODEL_BASED",
+          "virtualEntity": false,
+          "inputDataEntities": [
+            {
+              "type": "NONE",
+              "entityId": "shippers-59y5",
+              "schema": null,
+              "database": null,
+              "name": "shippers",
+              "projectId": "${databricks_ai_tour}",
+              "dataAppId": "bronze-eb-y"
+            }
+          ],
+          "dataEntityAttributes": {
+            "materialized": "INHERIT",
+            "hasHistory": "INHERIT",
+            "hasLiveViews": "OFF",
+            "hasChanges": "INHERIT",
+            "hasStandardViewsWithHeaders": "INHERIT",
+            "watermarkIncrementalSettings": "INHERIT"
+          },
+          "tableDef": {
+            "name": "shippers",
+            "dbSchema": null,
+            "dbName": null,
+            "columns": [
+              {
+                "name": "ShipperID",
+                "ordinal": 1,
+                "nullable": false,
+                "primaryKeyOrdinal": 1,
+                "datatype": {
+                  "type": "UINT4",
+                  "length": 0,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": null,
+                  "originalTypeFull": "INT"
+                },
+                "expression": null,
+                "id": "shipperid",
+                "flags": "NONE"
+              },
+              {
+                "name": "CompanyName",
+                "ordinal": 2,
+                "nullable": false,
+                "primaryKeyOrdinal": 0,
+                "datatype": {
+                  "type": "WSTRING",
+                  "length": 40,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": null,
+                  "originalTypeFull": "VARCHAR(40)"
+                },
+                "expression": null,
+                "id": "companyname",
+                "flags": "NONE"
+              },
+              {
+                "name": "Phone",
+                "ordinal": 3,
+                "nullable": true,
+                "primaryKeyOrdinal": 0,
+                "datatype": {
+                  "type": "WSTRING",
+                  "length": 24,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": null,
+                  "originalTypeFull": "VARCHAR(24)"
+                },
+                "expression": null,
+                "id": "phone",
+                "flags": "NONE"
+              }
+            ],
+            "datasetId": null,
+            "dbTableId": null,
+            "entityId": null,
+            "secureQri": "",
+            "fullLoadOnly": false
+          },
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "id": "shippers-uboz",
+          "name": "shippers",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "TRANSFORM_MODEL_BASED",
+          "virtualEntity": false,
+          "inputDataEntities": [
+            {
+              "type": "NONE",
+              "entityId": "suppliers-59y6",
+              "schema": null,
+              "database": null,
+              "name": "suppliers",
+              "projectId": "${databricks_ai_tour}",
+              "dataAppId": "bronze-eb-y"
+            }
+          ],
+          "dataEntityAttributes": {
+            "materialized": "INHERIT",
+            "hasHistory": "INHERIT",
+            "hasLiveViews": "OFF",
+            "hasChanges": "INHERIT",
+            "hasStandardViewsWithHeaders": "INHERIT",
+            "watermarkIncrementalSettings": "INHERIT"
+          },
+          "tableDef": {
+            "name": "suppliers",
+            "dbSchema": null,
+            "dbName": null,
+            "columns": [
+              {
+                "name": "SupplierID",
+                "ordinal": 1,
+                "nullable": false,
+                "primaryKeyOrdinal": 1,
+                "datatype": {
+                  "type": "UINT4",
+                  "length": 0,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": null,
+                  "originalTypeFull": "INT"
+                },
+                "expression": null,
+                "id": "supplierid",
+                "flags": "NONE"
+              },
+              {
+                "name": "CompanyName",
+                "ordinal": 2,
+                "nullable": true,
+                "primaryKeyOrdinal": 0,
+                "datatype": {
+                  "type": "WSTRING",
+                  "length": 50,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": null,
+                  "originalTypeFull": "VARCHAR(50)"
+                },
+                "expression": null,
+                "id": "companyname",
+                "flags": "NONE"
+              },
+              {
+                "name": "ContactName",
+                "ordinal": 3,
+                "nullable": true,
+                "primaryKeyOrdinal": 0,
+                "datatype": {
+                  "type": "WSTRING",
+                  "length": 30,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": null,
+                  "originalTypeFull": "VARCHAR(30)"
+                },
+                "expression": null,
+                "id": "contactname",
+                "flags": "NONE"
+              },
+              {
+                "name": "ContactTitle",
+                "ordinal": 4,
+                "nullable": true,
+                "primaryKeyOrdinal": 0,
+                "datatype": {
+                  "type": "WSTRING",
+                  "length": 30,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": null,
+                  "originalTypeFull": "VARCHAR(30)"
+                },
+                "expression": null,
+                "id": "contacttitle",
+                "flags": "NONE"
+              },
+              {
+                "name": "Address",
+                "ordinal": 5,
+                "nullable": true,
+                "primaryKeyOrdinal": 0,
+                "datatype": {
+                  "type": "WSTRING",
+                  "length": 50,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": null,
+                  "originalTypeFull": "VARCHAR(50)"
+                },
+                "expression": null,
+                "id": "address",
+                "flags": "NONE"
+              },
+              {
+                "name": "City",
+                "ordinal": 6,
+                "nullable": true,
+                "primaryKeyOrdinal": 0,
+                "datatype": {
+                  "type": "WSTRING",
+                  "length": 15,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": null,
+                  "originalTypeFull": "VARCHAR(15)"
+                },
+                "expression": null,
+                "id": "city",
+                "flags": "NONE"
+              },
+              {
+                "name": "Region",
+                "ordinal": 7,
+                "nullable": true,
+                "primaryKeyOrdinal": 0,
+                "datatype": {
+                  "type": "WSTRING",
+                  "length": 15,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": null,
+                  "originalTypeFull": "VARCHAR(15)"
+                },
+                "expression": null,
+                "id": "region",
+                "flags": "NONE"
+              },
+              {
+                "name": "PostalCode",
+                "ordinal": 8,
+                "nullable": true,
+                "primaryKeyOrdinal": 0,
+                "datatype": {
+                  "type": "WSTRING",
+                  "length": 10,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": null,
+                  "originalTypeFull": "VARCHAR(10)"
+                },
+                "expression": null,
+                "id": "postalcode",
+                "flags": "NONE"
+              },
+              {
+                "name": "Country",
+                "ordinal": 9,
+                "nullable": true,
+                "primaryKeyOrdinal": 0,
+                "datatype": {
+                  "type": "WSTRING",
+                  "length": 50,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": null,
+                  "originalTypeFull": "VARCHAR(50)"
+                },
+                "expression": null,
+                "id": "country",
+                "flags": "NONE"
+              },
+              {
+                "name": "Phone",
+                "ordinal": 10,
+                "nullable": true,
+                "primaryKeyOrdinal": 0,
+                "datatype": {
+                  "type": "WSTRING",
+                  "length": 24,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": null,
+                  "originalTypeFull": "VARCHAR(24)"
+                },
+                "expression": null,
+                "id": "phone",
+                "flags": "NONE"
+              },
+              {
+                "name": "Fax",
+                "ordinal": 11,
+                "nullable": true,
+                "primaryKeyOrdinal": 0,
+                "datatype": {
+                  "type": "WSTRING",
+                  "length": 24,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": null,
+                  "originalTypeFull": "VARCHAR(24)"
+                },
+                "expression": null,
+                "id": "fax",
+                "flags": "NONE"
+              },
+              {
+                "name": "HomePage",
+                "ordinal": 12,
+                "nullable": true,
+                "primaryKeyOrdinal": 0,
+                "datatype": {
+                  "type": "WSTRING",
+                  "length": 255,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": null,
+                  "originalTypeFull": "VARCHAR(255)"
+                },
+                "expression": null,
+                "id": "homepage",
+                "flags": "NONE"
+              }
+            ],
+            "datasetId": null,
+            "dbTableId": null,
+            "entityId": null,
+            "secureQri": "",
+            "fullLoadOnly": false
+          },
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "id": "suppliers-vg43",
+          "name": "suppliers",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "type": "CUSTOM",
+          "virtualEntity": false,
+          "inputDataEntities": [
+            {
+              "type": "NONE",
+              "entityId": "customers-59y0",
+              "schema": null,
+              "database": null,
+              "name": "customers",
+              "projectId": "${databricks_ai_tour}",
+              "dataAppId": "bronze-eb-y"
+            }
+          ],
+          "dataEntityAttributes": {
+            "materialized": "INHERIT",
+            "hasHistory": "INHERIT",
+            "hasLiveViews": "INHERIT",
+            "hasChanges": "INHERIT",
+            "hasStandardViewsWithHeaders": "INHERIT",
+            "watermarkIncrementalSettings": "INHERIT"
+          },
+          "tableDef": {
+            "name": "customers",
+            "dbSchema": null,
+            "dbName": null,
+            "columns": [
+              {
+                "name": "CustomerID",
+                "ordinal": 1,
+                "nullable": false,
+                "primaryKeyOrdinal": 1,
+                "datatype": {
+                  "type": "STRING",
+                  "length": 5,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": "STRING",
+                  "originalTypeFull": "STRING"
+                },
+                "expression": null,
+                "id": "customerid",
+                "flags": "NONE"
+              },
+              {
+                "name": "CompanyName",
+                "ordinal": 2,
+                "nullable": true,
+                "primaryKeyOrdinal": 0,
+                "datatype": {
+                  "type": "STRING",
+                  "length": 255,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": "STRING",
+                  "originalTypeFull": "STRING"
+                },
+                "expression": null,
+                "id": "companyname",
+                "flags": "NONE"
+              },
+              {
+                "name": "ContactName",
+                "ordinal": 3,
+                "nullable": true,
+                "primaryKeyOrdinal": 0,
+                "datatype": {
+                  "type": "STRING",
+                  "length": 255,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": "STRING",
+                  "originalTypeFull": "STRING"
+                },
+                "expression": null,
+                "id": "contactname",
+                "flags": "NONE"
+              },
+              {
+                "name": "ContactTitle",
+                "ordinal": 4,
+                "nullable": true,
+                "primaryKeyOrdinal": 0,
+                "datatype": {
+                  "type": "STRING",
+                  "length": 255,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": "STRING",
+                  "originalTypeFull": "STRING"
+                },
+                "expression": null,
+                "id": "contacttitle",
+                "flags": "NONE"
+              },
+              {
+                "name": "Address",
+                "ordinal": 5,
+                "nullable": true,
+                "primaryKeyOrdinal": 0,
+                "datatype": {
+                  "type": "STRING",
+                  "length": 255,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": "STRING",
+                  "originalTypeFull": "STRING"
+                },
+                "expression": null,
+                "id": "address",
+                "flags": "NONE"
+              },
+              {
+                "name": "City",
+                "ordinal": 6,
+                "nullable": true,
+                "primaryKeyOrdinal": 0,
+                "datatype": {
+                  "type": "STRING",
+                  "length": 255,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": "STRING",
+                  "originalTypeFull": "STRING"
+                },
+                "expression": null,
+                "id": "city",
+                "flags": "NONE"
+              },
+              {
+                "name": "Region",
+                "ordinal": 7,
+                "nullable": true,
+                "primaryKeyOrdinal": 0,
+                "datatype": {
+                  "type": "STRING",
+                  "length": 255,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": "STRING",
+                  "originalTypeFull": "STRING"
+                },
+                "expression": null,
+                "id": "region",
+                "flags": "NONE"
+              },
+              {
+                "name": "RegionCode",
+                "ordinal": 8,
+                "nullable": true,
+                "primaryKeyOrdinal": 0,
+                "datatype": {
+                  "type": "STRING",
+                  "length": 255,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": "STRING",
+                  "originalTypeFull": "STRING"
+                },
+                "expression": null,
+                "id": "regioncode",
+                "flags": "NONE"
+              },
+              {
+                "name": "PostalCode",
+                "ordinal": 9,
+                "nullable": true,
+                "primaryKeyOrdinal": 0,
+                "datatype": {
+                  "type": "STRING",
+                  "length": 255,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": "STRING",
+                  "originalTypeFull": "STRING"
+                },
+                "expression": null,
+                "id": "postalcode",
+                "flags": "NONE"
+              },
+              {
+                "name": "Country",
+                "ordinal": 10,
+                "nullable": true,
+                "primaryKeyOrdinal": 0,
+                "datatype": {
+                  "type": "STRING",
+                  "length": 255,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": "STRING",
+                  "originalTypeFull": "STRING"
+                },
+                "expression": null,
+                "id": "country",
+                "flags": "NONE"
+              },
+              {
+                "name": "Phone",
+                "ordinal": 11,
+                "nullable": true,
+                "primaryKeyOrdinal": 0,
+                "datatype": {
+                  "type": "STRING",
+                  "length": 255,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": "STRING",
+                  "originalTypeFull": "STRING"
+                },
+                "expression": null,
+                "id": "phone",
+                "flags": "NONE"
+              },
+              {
+                "name": "Fax",
+                "ordinal": 12,
+                "nullable": true,
+                "primaryKeyOrdinal": 0,
+                "datatype": {
+                  "type": "STRING",
+                  "length": 255,
+                  "precision": 0,
+                  "scale": 0,
+                  "originalType": "STRING",
+                  "originalTypeFull": "STRING"
+                },
+                "expression": null,
+                "id": "fax",
+                "flags": "NONE"
+              }
+            ],
+            "datasetId": null,
+            "dbTableId": null,
+            "entityId": null,
+            "secureQri": "",
+            "fullLoadOnly": false
+          },
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": {
+            "customSql": {
+              "expressionStatement": "select \n`CustomerID`, `CompanyName`, `ContactName`, `ContactTitle`, `Address`,\n  `City`, `Region`,  \n  CONCAT(\n    CASE WHEN (`Region` is NULL) THEN \"UNKNOWN\"  ELSE `Region` END,\n    '-', \n    CASE WHEN (`PostalCode` is NULL) THEN \"NO_PCODE\"  ELSE `PostalCode` END\n    )  as RegionCode,\n  `PostalCode`, `Country`, `Phone`, `Fax`\n  FROM ${customers}\n",
+              "alias": [
+                {
+                  "name": "customers",
+                  "value": "${projectId}$_$bronze-eb-y$_$customers-59y0"
+                }
+              ]
+            },
+            "mapping": null,
+            "incremental": false,
+            "text2sqlPrompt": null,
+            "text2sqlResult": null
+          },
+          "dimensionDataEntitySettings": null,
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "id": "customers-4mvn",
+          "name": "customers",
+          "description": "",
+          "version": "1",
+          "tags": null
+        }
+      ],
+      "modelBasedMappings": {
+        "categories-59y7": [
+          {
+            "sourceDataEntityKey": {
+              "type": "NONE",
+              "entityId": "categories-59yy",
+              "schema": null,
+              "database": null,
+              "name": "categories",
+              "projectId": "66a121d5a4517089733f7f34",
+              "dataAppId": "bronze-eb-y"
+            },
+            "filter": null,
+            "mappingFields": [
+              {
+                "columnId": "categoryid",
+                "expression": {
+                  "expressionStatement": "${CategoryID}",
+                  "alias": [
+                    {
+                      "name": "CategoryID",
+                      "value": "CategoryID"
+                    }
+                  ]
+                }
+              },
+              {
+                "columnId": "categoryname",
+                "expression": {
+                  "expressionStatement": "${CategoryName}",
+                  "alias": [
+                    {
+                      "name": "CategoryName",
+                      "value": "CategoryName"
+                    }
+                  ]
+                }
+              },
+              {
+                "columnId": "description",
+                "expression": {
+                  "expressionStatement": "${Description}",
+                  "alias": [
+                    {
+                      "name": "Description",
+                      "value": "Description"
+                    }
+                  ]
+                }
+              }
+            ],
+            "id": "categories_default_mapping-59y8",
+            "name": "categories_default_mapping",
+            "description": "",
+            "version": "1",
+            "tags": null
+          }
+        ],
+        "customer_alt_contact-ubox": [
+          {
+            "sourceDataEntityKey": {
+              "type": "NONE",
+              "entityId": "customer_alt_contact-59yz",
+              "schema": null,
+              "database": null,
+              "name": "customer_alt_contact",
+              "projectId": "66a121d5a4517089733f7f34",
+              "dataAppId": "bronze-eb-y"
+            },
+            "filter": null,
+            "mappingFields": [
+              {
+                "columnId": "customerid",
+                "expression": {
+                  "expressionStatement": "${CustomerID}",
+                  "alias": [
+                    {
+                      "name": "CustomerID",
+                      "value": "CustomerID"
+                    }
+                  ]
+                }
+              },
+              {
+                "columnId": "alternatecontacttype",
+                "expression": {
+                  "expressionStatement": "${AlternateContactType}",
+                  "alias": [
+                    {
+                      "name": "AlternateContactType",
+                      "value": "AlternateContactType"
+                    }
+                  ]
+                }
+              },
+              {
+                "columnId": "contactvalue",
+                "expression": {
+                  "expressionStatement": "${ContactValue}",
+                  "alias": [
+                    {
+                      "name": "ContactValue",
+                      "value": "ContactValue"
+                    }
+                  ]
+                }
+              }
+            ],
+            "id": "customer_alt_contact_default_mapping-uboy",
+            "name": "customer_alt_contact_default_mapping",
+            "description": "",
+            "version": "1",
+            "tags": null
+          }
+        ],
+        "employees-vg41": [
+          {
+            "sourceDataEntityKey": {
+              "type": "NONE",
+              "entityId": "employees-59y1",
+              "schema": null,
+              "database": null,
+              "name": "employees",
+              "projectId": "66a121d5a4517089733f7f34",
+              "dataAppId": "bronze-eb-y"
+            },
+            "filter": null,
+            "mappingFields": [
+              {
+                "columnId": "employeeid",
+                "expression": {
+                  "expressionStatement": "${EmployeeID}",
+                  "alias": [
+                    {
+                      "name": "EmployeeID",
+                      "value": "EmployeeID"
+                    }
+                  ]
+                }
+              },
+              {
+                "columnId": "lastname",
+                "expression": {
+                  "expressionStatement": "${LastName}",
+                  "alias": [
+                    {
+                      "name": "LastName",
+                      "value": "LastName"
+                    }
+                  ]
+                }
+              },
+              {
+                "columnId": "firstname",
+                "expression": {
+                  "expressionStatement": "${FirstName}",
+                  "alias": [
+                    {
+                      "name": "FirstName",
+                      "value": "FirstName"
+                    }
+                  ]
+                }
+              },
+              {
+                "columnId": "title",
+                "expression": {
+                  "expressionStatement": "${Title}",
+                  "alias": [
+                    {
+                      "name": "Title",
+                      "value": "Title"
+                    }
+                  ]
+                }
+              },
+              {
+                "columnId": "titleofcourtesy",
+                "expression": {
+                  "expressionStatement": "${TitleOfCourtesy}",
+                  "alias": [
+                    {
+                      "name": "TitleOfCourtesy",
+                      "value": "TitleOfCourtesy"
+                    }
+                  ]
+                }
+              },
+              {
+                "columnId": "birthdate",
+                "expression": {
+                  "expressionStatement": "${BirthDate}",
+                  "alias": [
+                    {
+                      "name": "BirthDate",
+                      "value": "BirthDate"
+                    }
+                  ]
+                }
+              },
+              {
+                "columnId": "hiredate",
+                "expression": {
+                  "expressionStatement": "${HireDate}",
+                  "alias": [
+                    {
+                      "name": "HireDate",
+                      "value": "HireDate"
+                    }
+                  ]
+                }
+              },
+              {
+                "columnId": "address",
+                "expression": {
+                  "expressionStatement": "${Address}",
+                  "alias": [
+                    {
+                      "name": "Address",
+                      "value": "Address"
+                    }
+                  ]
+                }
+              },
+              {
+                "columnId": "city",
+                "expression": {
+                  "expressionStatement": "${City}",
+                  "alias": [
+                    {
+                      "name": "City",
+                      "value": "City"
+                    }
+                  ]
+                }
+              },
+              {
+                "columnId": "region",
+                "expression": {
+                  "expressionStatement": "${Region}",
+                  "alias": [
+                    {
+                      "name": "Region",
+                      "value": "Region"
+                    }
+                  ]
+                }
+              },
+              {
+                "columnId": "postalcode",
+                "expression": {
+                  "expressionStatement": "${PostalCode}",
+                  "alias": [
+                    {
+                      "name": "PostalCode",
+                      "value": "PostalCode"
+                    }
+                  ]
+                }
+              },
+              {
+                "columnId": "country",
+                "expression": {
+                  "expressionStatement": "${Country}",
+                  "alias": [
+                    {
+                      "name": "Country",
+                      "value": "Country"
+                    }
+                  ]
+                }
+              },
+              {
+                "columnId": "homephone",
+                "expression": {
+                  "expressionStatement": "${HomePhone}",
+                  "alias": [
+                    {
+                      "name": "HomePhone",
+                      "value": "HomePhone"
+                    }
+                  ]
+                }
+              },
+              {
+                "columnId": "extension",
+                "expression": {
+                  "expressionStatement": "${Extension}",
+                  "alias": [
+                    {
+                      "name": "Extension",
+                      "value": "Extension"
+                    }
+                  ]
+                }
+              },
+              {
+                "columnId": "photo",
+                "expression": {
+                  "expressionStatement": "${Photo}",
+                  "alias": [
+                    {
+                      "name": "Photo",
+                      "value": "Photo"
+                    }
+                  ]
+                }
+              },
+              {
+                "columnId": "notes",
+                "expression": {
+                  "expressionStatement": "${Notes}",
+                  "alias": [
+                    {
+                      "name": "Notes",
+                      "value": "Notes"
+                    }
+                  ]
+                }
+              },
+              {
+                "columnId": "reportsto",
+                "expression": {
+                  "expressionStatement": "${ReportsTo}",
+                  "alias": [
+                    {
+                      "name": "ReportsTo",
+                      "value": "ReportsTo"
+                    }
+                  ]
+                }
+              }
+            ],
+            "id": "employees_default_mapping-vg42",
+            "name": "employees_default_mapping",
+            "description": "",
+            "version": "1",
+            "tags": null
+          }
+        ],
+        "order_details-eb-z": [
+          {
+            "sourceDataEntityKey": {
+              "type": "NONE",
+              "entityId": "order_details-59y2",
+              "schema": null,
+              "database": null,
+              "name": "order_details",
+              "projectId": "66a121d5a4517089733f7f34",
+              "dataAppId": "bronze-eb-y"
+            },
+            "filter": null,
+            "mappingFields": [
+              {
+                "columnId": "odid",
+                "expression": {
+                  "expressionStatement": "${odID}",
+                  "alias": [
+                    {
+                      "name": "odID",
+                      "value": "odID"
+                    }
+                  ]
+                }
+              },
+              {
+                "columnId": "orderid",
+                "expression": {
+                  "expressionStatement": "${OrderID}",
+                  "alias": [
+                    {
+                      "name": "OrderID",
+                      "value": "OrderID"
+                    }
+                  ]
+                }
+              },
+              {
+                "columnId": "productid",
+                "expression": {
+                  "expressionStatement": "${ProductID}",
+                  "alias": [
+                    {
+                      "name": "ProductID",
+                      "value": "ProductID"
+                    }
+                  ]
+                }
+              },
+              {
+                "columnId": "unitprice",
+                "expression": {
+                  "expressionStatement": "${UnitPrice}",
+                  "alias": [
+                    {
+                      "name": "UnitPrice",
+                      "value": "UnitPrice"
+                    }
+                  ]
+                }
+              },
+              {
+                "columnId": "quantity",
+                "expression": {
+                  "expressionStatement": "${Quantity}",
+                  "alias": [
+                    {
+                      "name": "Quantity",
+                      "value": "Quantity"
+                    }
+                  ]
+                }
+              },
+              {
+                "columnId": "discount",
+                "expression": {
+                  "expressionStatement": "${Discount}",
+                  "alias": [
+                    {
+                      "name": "Discount",
+                      "value": "Discount"
+                    }
+                  ]
+                }
+              },
+              {
+                "columnId": "category",
+                "expression": {
+                  "expressionStatement": "${Category}",
+                  "alias": [
+                    {
+                      "name": "Category",
+                      "value": "Category"
+                    }
+                  ]
+                }
+              }
+            ],
+            "id": "order_details_default_mapping-eb-a",
+            "name": "order_details_default_mapping",
+            "description": "",
+            "version": "1",
+            "tags": null
+          }
+        ],
+        "orders-jzkb": [
+          {
+            "sourceDataEntityKey": {
+              "type": "NONE",
+              "entityId": "orders-59y3",
+              "schema": null,
+              "database": null,
+              "name": "orders",
+              "projectId": "66a121d5a4517089733f7f34",
+              "dataAppId": "bronze-eb-y"
+            },
+            "filter": null,
+            "mappingFields": [
+              {
+                "columnId": "orderid",
+                "expression": {
+                  "expressionStatement": "${OrderID}",
+                  "alias": [
+                    {
+                      "name": "OrderID",
+                      "value": "OrderID"
+                    }
+                  ]
+                }
+              },
+              {
+                "columnId": "customerid",
+                "expression": {
+                  "expressionStatement": "${CustomerID}",
+                  "alias": [
+                    {
+                      "name": "CustomerID",
+                      "value": "CustomerID"
+                    }
+                  ]
+                }
+              },
+              {
+                "columnId": "employeeid",
+                "expression": {
+                  "expressionStatement": "${EmployeeID}",
+                  "alias": [
+                    {
+                      "name": "EmployeeID",
+                      "value": "EmployeeID"
+                    }
+                  ]
+                }
+              },
+              {
+                "columnId": "orderdate",
+                "expression": {
+                  "expressionStatement": "${OrderDate}",
+                  "alias": [
+                    {
+                      "name": "OrderDate",
+                      "value": "OrderDate"
+                    }
+                  ]
+                }
+              },
+              {
+                "columnId": "requireddate",
+                "expression": {
+                  "expressionStatement": "${RequiredDate}",
+                  "alias": [
+                    {
+                      "name": "RequiredDate",
+                      "value": "RequiredDate"
+                    }
+                  ]
+                }
+              },
+              {
+                "columnId": "shippeddate",
+                "expression": {
+                  "expressionStatement": "${ShippedDate}",
+                  "alias": [
+                    {
+                      "name": "ShippedDate",
+                      "value": "ShippedDate"
+                    }
+                  ]
+                }
+              },
+              {
+                "columnId": "shipvia",
+                "expression": {
+                  "expressionStatement": "${ShipVia}",
+                  "alias": [
+                    {
+                      "name": "ShipVia",
+                      "value": "ShipVia"
+                    }
+                  ]
+                }
+              },
+              {
+                "columnId": "freight",
+                "expression": {
+                  "expressionStatement": "${Freight}",
+                  "alias": [
+                    {
+                      "name": "Freight",
+                      "value": "Freight"
+                    }
+                  ]
+                }
+              },
+              {
+                "columnId": "shipname",
+                "expression": {
+                  "expressionStatement": "${ShipName}",
+                  "alias": [
+                    {
+                      "name": "ShipName",
+                      "value": "ShipName"
+                    }
+                  ]
+                }
+              },
+              {
+                "columnId": "shipaddress",
+                "expression": {
+                  "expressionStatement": "${ShipAddress}",
+                  "alias": [
+                    {
+                      "name": "ShipAddress",
+                      "value": "ShipAddress"
+                    }
+                  ]
+                }
+              },
+              {
+                "columnId": "shipcity",
+                "expression": {
+                  "expressionStatement": "${ShipCity}",
+                  "alias": [
+                    {
+                      "name": "ShipCity",
+                      "value": "ShipCity"
+                    }
+                  ]
+                }
+              },
+              {
+                "columnId": "shipregion",
+                "expression": {
+                  "expressionStatement": "${ShipRegion}",
+                  "alias": [
+                    {
+                      "name": "ShipRegion",
+                      "value": "ShipRegion"
+                    }
+                  ]
+                }
+              },
+              {
+                "columnId": "shippostalcode",
+                "expression": {
+                  "expressionStatement": "${ShipPostalCode}",
+                  "alias": [
+                    {
+                      "name": "ShipPostalCode",
+                      "value": "ShipPostalCode"
+                    }
+                  ]
+                }
+              },
+              {
+                "columnId": "shipcountry",
+                "expression": {
+                  "expressionStatement": "${ShipCountry}",
+                  "alias": [
+                    {
+                      "name": "ShipCountry",
+                      "value": "ShipCountry"
+                    }
+                  ]
+                }
+              }
+            ],
+            "id": "orders_default_mapping-jzkc",
+            "name": "orders_default_mapping",
+            "description": "",
+            "version": "1",
+            "tags": null
+          }
+        ],
+        "products-59y9": [
+          {
+            "sourceDataEntityKey": {
+              "type": "NONE",
+              "entityId": "products-59y4",
+              "schema": null,
+              "database": null,
+              "name": "products",
+              "projectId": "66a121d5a4517089733f7f34",
+              "dataAppId": "bronze-eb-y"
+            },
+            "filter": null,
+            "mappingFields": [
+              {
+                "columnId": "productid",
+                "expression": {
+                  "expressionStatement": "${ProductID}",
+                  "alias": [
+                    {
+                      "name": "ProductID",
+                      "value": "ProductID"
+                    }
+                  ]
+                }
+              },
+              {
+                "columnId": "productname",
+                "expression": {
+                  "expressionStatement": "${ProductName}",
+                  "alias": [
+                    {
+                      "name": "ProductName",
+                      "value": "ProductName"
+                    }
+                  ]
+                }
+              },
+              {
+                "columnId": "supplierid",
+                "expression": {
+                  "expressionStatement": "${SupplierID}",
+                  "alias": [
+                    {
+                      "name": "SupplierID",
+                      "value": "SupplierID"
+                    }
+                  ]
+                }
+              },
+              {
+                "columnId": "categoryid",
+                "expression": {
+                  "expressionStatement": "${CategoryID}",
+                  "alias": [
+                    {
+                      "name": "CategoryID",
+                      "value": "CategoryID"
+                    }
+                  ]
+                }
+              },
+              {
+                "columnId": "quantityperunit",
+                "expression": {
+                  "expressionStatement": "${QuantityPerUnit}",
+                  "alias": [
+                    {
+                      "name": "QuantityPerUnit",
+                      "value": "QuantityPerUnit"
+                    }
+                  ]
+                }
+              },
+              {
+                "columnId": "unitprice",
+                "expression": {
+                  "expressionStatement": "${UnitPrice}",
+                  "alias": [
+                    {
+                      "name": "UnitPrice",
+                      "value": "UnitPrice"
+                    }
+                  ]
+                }
+              },
+              {
+                "columnId": "unitsinstock",
+                "expression": {
+                  "expressionStatement": "${UnitsInStock}",
+                  "alias": [
+                    {
+                      "name": "UnitsInStock",
+                      "value": "UnitsInStock"
+                    }
+                  ]
+                }
+              },
+              {
+                "columnId": "unitsonorder",
+                "expression": {
+                  "expressionStatement": "${UnitsOnOrder}",
+                  "alias": [
+                    {
+                      "name": "UnitsOnOrder",
+                      "value": "UnitsOnOrder"
+                    }
+                  ]
+                }
+              },
+              {
+                "columnId": "reorderlevel",
+                "expression": {
+                  "expressionStatement": "${ReorderLevel}",
+                  "alias": [
+                    {
+                      "name": "ReorderLevel",
+                      "value": "ReorderLevel"
+                    }
+                  ]
+                }
+              },
+              {
+                "columnId": "discontinued",
+                "expression": {
+                  "expressionStatement": "${Discontinued}",
+                  "alias": [
+                    {
+                      "name": "Discontinued",
+                      "value": "Discontinued"
+                    }
+                  ]
+                }
+              }
+            ],
+            "id": "products_default_mapping-59y-",
+            "name": "products_default_mapping",
+            "description": "",
+            "version": "1",
+            "tags": null
+          }
+        ],
+        "shippers-uboz": [
+          {
+            "sourceDataEntityKey": {
+              "type": "NONE",
+              "entityId": "shippers-59y5",
+              "schema": null,
+              "database": null,
+              "name": "shippers",
+              "projectId": "66a121d5a4517089733f7f34",
+              "dataAppId": "bronze-eb-y"
+            },
+            "filter": null,
+            "mappingFields": [
+              {
+                "columnId": "shipperid",
+                "expression": {
+                  "expressionStatement": "${ShipperID}",
+                  "alias": [
+                    {
+                      "name": "ShipperID",
+                      "value": "ShipperID"
+                    }
+                  ]
+                }
+              },
+              {
+                "columnId": "companyname",
+                "expression": {
+                  "expressionStatement": "${CompanyName}",
+                  "alias": [
+                    {
+                      "name": "CompanyName",
+                      "value": "CompanyName"
+                    }
+                  ]
+                }
+              },
+              {
+                "columnId": "phone",
+                "expression": {
+                  "expressionStatement": "${Phone}",
+                  "alias": [
+                    {
+                      "name": "Phone",
+                      "value": "Phone"
+                    }
+                  ]
+                }
+              }
+            ],
+            "id": "shippers_default_mapping-uboa",
+            "name": "shippers_default_mapping",
+            "description": "",
+            "version": "1",
+            "tags": null
+          }
+        ],
+        "suppliers-vg43": [
+          {
+            "sourceDataEntityKey": {
+              "type": "NONE",
+              "entityId": "suppliers-59y6",
+              "schema": null,
+              "database": null,
+              "name": "suppliers",
+              "projectId": "66a121d5a4517089733f7f34",
+              "dataAppId": "bronze-eb-y"
+            },
+            "filter": null,
+            "mappingFields": [
+              {
+                "columnId": "supplierid",
+                "expression": {
+                  "expressionStatement": "${SupplierID}",
+                  "alias": [
+                    {
+                      "name": "SupplierID",
+                      "value": "SupplierID"
+                    }
+                  ]
+                }
+              },
+              {
+                "columnId": "companyname",
+                "expression": {
+                  "expressionStatement": "${CompanyName}",
+                  "alias": [
+                    {
+                      "name": "CompanyName",
+                      "value": "CompanyName"
+                    }
+                  ]
+                }
+              },
+              {
+                "columnId": "contactname",
+                "expression": {
+                  "expressionStatement": "${ContactName}",
+                  "alias": [
+                    {
+                      "name": "ContactName",
+                      "value": "ContactName"
+                    }
+                  ]
+                }
+              },
+              {
+                "columnId": "contacttitle",
+                "expression": {
+                  "expressionStatement": "${ContactTitle}",
+                  "alias": [
+                    {
+                      "name": "ContactTitle",
+                      "value": "ContactTitle"
+                    }
+                  ]
+                }
+              },
+              {
+                "columnId": "address",
+                "expression": {
+                  "expressionStatement": "${Address}",
+                  "alias": [
+                    {
+                      "name": "Address",
+                      "value": "Address"
+                    }
+                  ]
+                }
+              },
+              {
+                "columnId": "city",
+                "expression": {
+                  "expressionStatement": "${City}",
+                  "alias": [
+                    {
+                      "name": "City",
+                      "value": "City"
+                    }
+                  ]
+                }
+              },
+              {
+                "columnId": "region",
+                "expression": {
+                  "expressionStatement": "${Region}",
+                  "alias": [
+                    {
+                      "name": "Region",
+                      "value": "Region"
+                    }
+                  ]
+                }
+              },
+              {
+                "columnId": "postalcode",
+                "expression": {
+                  "expressionStatement": "${PostalCode}",
+                  "alias": [
+                    {
+                      "name": "PostalCode",
+                      "value": "PostalCode"
+                    }
+                  ]
+                }
+              },
+              {
+                "columnId": "country",
+                "expression": {
+                  "expressionStatement": "${Country}",
+                  "alias": [
+                    {
+                      "name": "Country",
+                      "value": "Country"
+                    }
+                  ]
+                }
+              },
+              {
+                "columnId": "phone",
+                "expression": {
+                  "expressionStatement": "${Phone}",
+                  "alias": [
+                    {
+                      "name": "Phone",
+                      "value": "Phone"
+                    }
+                  ]
+                }
+              },
+              {
+                "columnId": "fax",
+                "expression": {
+                  "expressionStatement": "${Fax}",
+                  "alias": [
+                    {
+                      "name": "Fax",
+                      "value": "Fax"
+                    }
+                  ]
+                }
+              },
+              {
+                "columnId": "homepage",
+                "expression": {
+                  "expressionStatement": "${HomePage}",
+                  "alias": [
+                    {
+                      "name": "HomePage",
+                      "value": "HomePage"
+                    }
+                  ]
+                }
+              }
+            ],
+            "id": "suppliers_default_mapping-vg44",
+            "name": "suppliers_default_mapping",
+            "description": "",
+            "version": "1",
+            "tags": null
+          }
+        ]
+      },
+      "cachedDataEntities": [],
+      "rulesets": [],
+      "entityRelationship": [
+        {
+          "sourceEntity": {
+            "type": "NONE",
+            "entityId": "orders-jzkb",
+            "schema": null,
+            "database": null,
+            "name": "orders",
+            "projectId": "${databricks_ai_tour}",
+            "dataAppId": "silver-b4xn"
+          },
+          "targetEntity": {
+            "type": "NONE",
+            "entityId": "shippers-uboz",
+            "schema": null,
+            "database": null,
+            "name": "shippers",
+            "projectId": "${databricks_ai_tour}",
+            "dataAppId": "silver-b4xn"
+          },
+          "columnRelationships": [
+            {
+              "sourceColumn": "ShipVia",
+              "targetColumn": "ShipperID",
+              "sourceColumnId": "shipvia",
+              "targetColumnId": "shipperid"
+            }
+          ],
+          "shortName": null,
+          "id": "orders_shippers-qxic",
+          "name": "Orders_Shippers",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "sourceEntity": {
+            "type": "NONE",
+            "entityId": "customer_alt_contact-ubox",
+            "schema": null,
+            "database": null,
+            "name": "customer_alt_contact",
+            "projectId": "${databricks_ai_tour}",
+            "dataAppId": "silver-b4xn"
+          },
+          "targetEntity": {
+            "type": "NONE",
+            "entityId": "customers-4mvn",
+            "schema": null,
+            "database": null,
+            "name": "customers",
+            "projectId": "${databricks_ai_tour}",
+            "dataAppId": "silver-b4xn"
+          },
+          "columnRelationships": [
+            {
+              "sourceColumn": "CustomerID",
+              "targetColumn": "CustomerID",
+              "sourceColumnId": "customerid",
+              "targetColumnId": "customerid"
+            }
+          ],
+          "shortName": null,
+          "id": "customer_alt_contact_customers_relation-brsp",
+          "name": "customer_alt_contact_customers_relation",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "sourceEntity": {
+            "type": "NONE",
+            "entityId": "order_details-eb-z",
+            "schema": null,
+            "database": null,
+            "name": "order_details",
+            "projectId": "${databricks_ai_tour}",
+            "dataAppId": "silver-b4xn"
+          },
+          "targetEntity": {
+            "type": "NONE",
+            "entityId": "orders-jzkb",
+            "schema": null,
+            "database": null,
+            "name": "orders",
+            "projectId": "${databricks_ai_tour}",
+            "dataAppId": "silver-b4xn"
+          },
+          "columnRelationships": [
+            {
+              "sourceColumn": "OrderID",
+              "targetColumn": "OrderID",
+              "sourceColumnId": "orderid",
+              "targetColumnId": "orderid"
+            }
+          ],
+          "shortName": null,
+          "id": "order_details_orders_relation-4mvq",
+          "name": "order_details_orders_relation",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "sourceEntity": {
+            "type": "NONE",
+            "entityId": "order_details-eb-z",
+            "schema": null,
+            "database": null,
+            "name": "order_details",
+            "projectId": "${databricks_ai_tour}",
+            "dataAppId": "silver-b4xn"
+          },
+          "targetEntity": {
+            "type": "NONE",
+            "entityId": "products-59y9",
+            "schema": null,
+            "database": null,
+            "name": "products",
+            "projectId": "${databricks_ai_tour}",
+            "dataAppId": "silver-b4xn"
+          },
+          "columnRelationships": [
+            {
+              "sourceColumn": "ProductID",
+              "targetColumn": "ProductID",
+              "sourceColumnId": "productid",
+              "targetColumnId": "productid"
+            }
+          ],
+          "shortName": null,
+          "id": "order_details_products_relation-ipxp",
+          "name": "order_details_products_relation",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "sourceEntity": {
+            "type": "NONE",
+            "entityId": "orders-jzkb",
+            "schema": null,
+            "database": null,
+            "name": "orders",
+            "projectId": "${databricks_ai_tour}",
+            "dataAppId": "silver-b4xn"
+          },
+          "targetEntity": {
+            "type": "NONE",
+            "entityId": "customers-4mvn",
+            "schema": null,
+            "database": null,
+            "name": "customers",
+            "projectId": "${databricks_ai_tour}",
+            "dataAppId": "silver-b4xn"
+          },
+          "columnRelationships": [
+            {
+              "sourceColumn": "CustomerID",
+              "targetColumn": "CustomerID",
+              "sourceColumnId": "customerid",
+              "targetColumnId": "customerid"
+            }
+          ],
+          "shortName": null,
+          "id": "orders_customers_relation-f7s5",
+          "name": "orders_customers_relation",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "sourceEntity": {
+            "type": "NONE",
+            "entityId": "orders-jzkb",
+            "schema": null,
+            "database": null,
+            "name": "orders",
+            "projectId": "${databricks_ai_tour}",
+            "dataAppId": "silver-b4xn"
+          },
+          "targetEntity": {
+            "type": "NONE",
+            "entityId": "employees-vg41",
+            "schema": null,
+            "database": null,
+            "name": "employees",
+            "projectId": "${databricks_ai_tour}",
+            "dataAppId": "silver-b4xn"
+          },
+          "columnRelationships": [
+            {
+              "sourceColumn": "EmployeeID",
+              "targetColumn": "EmployeeID",
+              "sourceColumnId": "employeeid",
+              "targetColumnId": "employeeid"
+            }
+          ],
+          "shortName": null,
+          "id": "orders_employees_relation-qxid",
+          "name": "orders_employees_relation",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "sourceEntity": {
+            "type": "NONE",
+            "entityId": "products-59y9",
+            "schema": null,
+            "database": null,
+            "name": "products",
+            "projectId": "${databricks_ai_tour}",
+            "dataAppId": "silver-b4xn"
+          },
+          "targetEntity": {
+            "type": "NONE",
+            "entityId": "categories-59y7",
+            "schema": null,
+            "database": null,
+            "name": "categories",
+            "projectId": "${databricks_ai_tour}",
+            "dataAppId": "silver-b4xn"
+          },
+          "columnRelationships": [
+            {
+              "sourceColumn": "CategoryID",
+              "targetColumn": "CategoryID",
+              "sourceColumnId": "categoryid",
+              "targetColumnId": "categoryid"
+            }
+          ],
+          "shortName": null,
+          "id": "products_categories_relation-brsq",
+          "name": "products_categories_relation",
+          "description": "",
+          "version": "1",
+          "tags": null
+        },
+        {
+          "sourceEntity": {
+            "type": "NONE",
+            "entityId": "products-59y9",
+            "schema": null,
+            "database": null,
+            "name": "products",
+            "projectId": "${databricks_ai_tour}",
+            "dataAppId": "silver-b4xn"
+          },
+          "targetEntity": {
+            "type": "NONE",
+            "entityId": "suppliers-vg43",
+            "schema": null,
+            "database": null,
+            "name": "suppliers",
+            "projectId": "${databricks_ai_tour}",
+            "dataAppId": "silver-b4xn"
+          },
+          "columnRelationships": [
+            {
+              "sourceColumn": "SupplierID",
+              "targetColumn": "SupplierID",
+              "sourceColumnId": "supplierid",
+              "targetColumnId": "supplierid"
+            }
+          ],
+          "shortName": null,
+          "id": "products_suppliers_relation-4mvr",
+          "name": "products_suppliers_relation",
+          "description": "",
+          "version": "1",
+          "tags": null
+        }
+      ],
+      "schedulings": [
+        {
+          "enabled": false,
+          "schedulingType": "EVENT_BASED",
+          "timeBasedScheduling": {
+            "schedule": [],
+            "startDateTime": null,
+            "endDateTime": null,
+            "timezone": null
+          },
+          "eventBasedScheduling": {
+            "eventSchedulingType": "ANY_INPUT_TASK",
+            "triggerApps": []
+          },
+          "id": "schedule-b4xo",
+          "name": "Schedule",
+          "description": "",
+          "version": "1",
+          "tags": null
+        }
+      ],
+      "dataFlows": null
+    },
+    {
+      "app": {
+        "type": "DOCUMENT_PUBLISHING",
+        "subType": null,
+        "id": "ai_ready_data-sj3b",
+        "name": "AI-ready data",
+        "description": "",
+        "version": "1",
+        "tags": null
+      },
+      "settings": {
+        "fullLoadOnly": false,
+        "landingAppSettings": null,
+        "transformAppSettings": null,
+        "storageAppSettings": null,
+        "datamartAppSettings": null,
+        "qvdStorageAppSettings": null,
+        "registeredAppSettings": null,
+        "replicationAppSettings": null,
+        "consolidationAppSettings": null,
+        "publishingAppSettings": null,
+        "distributionAppSettings": null,
+        "lakeLandingAppSettings": null,
+        "docPublishAppSettings": {
+          "vectorDbConnectionId": null,
+          "llmConnectionId": "${ai_ready_data-sj3b.publishing_connection.llm_connection_id}",
+          "qlikAnswersConnectionId": null,
+          "index": {
+            "compute": "qlik_vector_compute",
+            "database": "ai_tour",
+            "schema": "ai_ready_data",
+            "name": "ai_ready_data"
+          },
+          "indexActionOnReload": "RECREATE",
+          "bulkSize": 100,
+          "k": 2,
+          "artifactsLocation": {
+            "internalSchema": "ai_ready_data__internal",
+            "dataAssetSchema": "ai_ready_data",
+            "database": "${ai_ready_data-sj3b.database}"
+          },
+          "artifactsInfo": {
+            "prefixForAllTablesAndViews": "",
+            "liveViews": {
+              "enabled": true,
+              "transactionallyConsistent": false,
+              "currentSuffix": "__live",
+              "historySuffix": "__live_history"
+            },
+            "headerColumnsPrefix": "hdr__",
+            "history": {
+              "enabled": false,
+              "historyViewsSuffix": "__history",
+              "fromDateColumnName": "hdr__from_timestamp",
+              "toDateColumnName": "hdr__to_timestamp",
+              "priorTablesSuffix": "__prior"
+            },
+            "changeTables": {
+              "enabled": true,
+              "tablesSuffix": "__ct",
+              "viewsSuffix": "__changes"
+            },
+            "standardViewsWithHeaders": {
+              "enabled": true,
+              "suffix": "__whdr"
+            },
+            "current": {
+              "standardViewsSuffix": "",
+              "currentTablesSuffix": "__current"
+            },
+            "materialized": true,
+            "reloadType": "COMPARE_AND_APPLY_WITH_DELETED_ROWS"
+          },
+          "dataAppRuntime": {
+            "tableUpdateInterval": 0,
+            "tableUpdateConcurrency": 10,
+            "maxNumberOfRecords": 0,
+            "workloadExecutionEngine": {
+              "engineType": "DEFAULT",
+              "name": ""
+            }
+          },
+          "loadViewsSuffix": "__publish_doc_view",
+          "cdcViewsSuffix": "__publish_doc_cdc_view",
+          "publishTo": "STORAGE_PLATFORM",
+          "outputDirectory": null
+        },
+        "filePublishAppSettings": null,
+        "fileLandingAppSettings": null,
+        "isDummySettings": null
+      },
+      "sourceSelection": {
+        "dataEntitiesSelection": {
+          "sourceConnectionId": null,
+          "includePatterns": [
+            {
+              "tablePattern": "%",
+              "schemaPattern": "%",
+              "database": null,
+              "entityType": "TABLE",
+              "projectId": "${databricks_ai_tour}",
+              "dataAppId": "silver-b4xn"
+            }
+          ],
+          "excludePatterns": null,
+          "dataEntities": null
+        }
+      },
+      "dataEntities": [
+        {
+          "type": "DIMENSION",
+          "virtualEntity": false,
+          "inputDataEntities": [
+            {
+              "type": "NONE",
+              "entityId": "order_details-eb-z",
+              "schema": null,
+              "database": null,
+              "name": "order_details",
+              "projectId": "${databricks_ai_tour}",
+              "dataAppId": "silver-b4xn"
+            },
+            {
+              "type": "NONE",
+              "entityId": "categories-59y7",
+              "schema": null,
+              "database": null,
+              "name": "categories",
+              "projectId": "${databricks_ai_tour}",
+              "dataAppId": "silver-b4xn"
+            },
+            {
+              "type": "NONE",
+              "entityId": "products-59y9",
+              "schema": null,
+              "database": null,
+              "name": "products",
+              "projectId": "${databricks_ai_tour}",
+              "dataAppId": "silver-b4xn"
+            },
+            {
+              "type": "NONE",
+              "entityId": "customers-4mvn",
+              "schema": null,
+              "database": null,
+              "name": "customers",
+              "projectId": "${databricks_ai_tour}",
+              "dataAppId": "silver-b4xn"
+            },
+            {
+              "type": "NONE",
+              "entityId": "orders-jzkb",
+              "schema": null,
+              "database": null,
+              "name": "orders",
+              "projectId": "${databricks_ai_tour}",
+              "dataAppId": "silver-b4xn"
+            }
+          ],
+          "dataEntityAttributes": null,
+          "tableDef": null,
+          "newName": null,
+          "internalArtifacts": null,
+          "externalArtifacts": null,
+          "landingDataEntitySettings": null,
+          "transformDataEntitySettings": null,
+          "customDataEntitySettings": null,
+          "dimensionDataEntitySettings": {
+            "type": "TYPE1",
+            "rootDataEntityId": {
+              "type": "NONE",
+              "entityId": "order_details-eb-z",
+              "schema": null,
+              "database": null,
+              "name": "order_details",
+              "projectId": "${databricks_ai_tour}",
+              "dataAppId": "silver-b4xn"
+            },
+            "entityRelationshipPath": [
+              "order_details_orders_relation-4mvq",
+              "order_details_orders_relation-4mvq$_$orders_customers_relation-f7s5",
+              "order_details_products_relation-ipxp",
+              "order_details_products_relation-ipxp$_$products_categories_relation-brsq"
+            ],
+            "mapping": null,
+            "fullyType2Sources": false,
+            "repeatedDataEntities": [],
+            "checkedTreeNodesForDisplay": [
+              "order_details_products_relation-ipxp$_$products_categories_relation-brsq",
+              "order_details_products_relation-ipxp",
+              "order_details_orders_relation-4mvq$_$orders_customers_relation-f7s5",
+              "order_details_orders_relation-4mvq"
+            ],
+            "subtype": "NONE"
+          },
+          "starSchemaDataEntitySettings": null,
+          "registeredDataEntitySettings": null,
+          "dataflowEntitySettings": null,
+          "transformModelBasedDataEntitySettings": null,
+          "id": "order_details-uj4a",
+          "name": "order_details",
+          "description": "",
+          "version": "1",
+          "tags": null
+        }
+      ],
+      "modelBasedMappings": {},
+      "cachedDataEntities": [],
+      "rulesets": [
+        {
+          "ruleset": {
+            "globalRules": [
+              "qlik_remove_blob_columns-sj3c",
+              "qlik_remove_bytes_columns-sj3d"
+            ],
+            "tableRules": null,
+            "enabled": true,
+            "id": "outbound",
+            "name": "outbound",
+            "description": "",
+            "version": "1",
+            "tags": null
+          },
+          "globalRules": [],
+          "tableRules": []
+        }
+      ],
+      "entityRelationship": [],
+      "schedulings": [],
+      "dataFlows": null
+    }
+  ]
+}
